@@ -12,18 +12,6 @@
     }
   });
 
-  for(var p = 0; p<pools.length; p++) {
-    for(var k in pools[p]) {
-      $.getJSON(pools[p][k], function(data) {
-        var id = $('#' + (data.config.symbol).toLowerCase() + ' span');
-        $(id[0]).text(data.pool.workers);
-        $(id[1]).text(data.pool.lastBlockFound);
-        $(id[2]).text(data.config.cnAlgorithm);
-      });
-    }
-  }
-
-
   // Back to top button
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {

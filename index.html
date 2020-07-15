@@ -16,15 +16,31 @@
   <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
   <script>
-var pools = [
-  {"pgo": "https://letshash.it:8117/stats"},
-  {"cico": "https://letshash.it:8007/stats"},
-  {"cirq": "https://letshash.it:8002/stats"},
-  {"klr": "https://letshash.it:8112/stats"},
-  {"stch": "https://letshash.it:8003/stats"},
-  {"tsx": "https://letshash.it:8006/stats"},
-  {"xuni": "https://letshash.it:8120/stats"}
-];
+    var pools = {
+      "CICO": {
+        "api": "https://letshash.it:8007/stats",
+        "url": "http://letshash.it/cico/",
+        "img": ""
+      },
+
+      "CIRQ": {
+        "api": "https://letshash.it:8002/stats",
+        "url": "http://letshash.it/cirq/",
+        "img": "cirquity.png"
+      },
+
+      "STCH": {
+        "api": "https://letshash.it:8003/stats",
+        "url": "http://letshash.it/stch/",
+        "img": ""
+      },
+
+      "TSX": {
+        "api": "https://letshash.it:8006/stats",
+        "url": "http://letshash.it/tsx/",
+        "img": ""
+      }
+    };
   </script>
 </head>
 
@@ -81,170 +97,9 @@ var pools = [
             rig monitoring. Solo mining is also available for all.</p>
         </header>
 
-        <div class="row">
-
-
-
-
-          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <div class="icon" style="background: #e1eeff;"><i class="ion-ios-world-outline"
-                  style="color: #2282ff;"></i></div>
-              <h4 class="title"><a href="http://pgo.letshash.it/">Pengolino </a></h4>
-              <p class="description" id="pgo">
-                Miners: <span>0</span>
-                <br>
-                Last block: <span>0</span>
-                <br>
-                Algorithm: <span></span>
-                <br>
-              </p>
-              <br>
-              <p class="description text-center">
-                <a class="btn btn-primary" href="http://pgo.letshash.it/">go to mining pool</a>
-              </p>
-            </div>
-          </div>
-
-
-
-          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="box">
-              <div class="icon" style="background: #e1eeff;"><i class="ion-ios-world-outline"
-                  style="color: #2282ff;"></i></div>
-              <h4 class="title"><a href="http://cico.letshash.it">Coinicles </a></h4>
-              <p class="description" id="cico">
-                Miners: <span>0</span>
-                <br>
-                Last block: <span>0</span>
-                <br>
-                Algorithm: <span></span>
-                <br>
-              </p>
-              <br>
-              <p class="description text-center">
-                <a class="btn btn-primary" href="http://cico.letshash.it/">go to mining pool</a>
-              </p>
-            </div>
-          </div>
-
-
-
-
-          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="box">
-              <div class="icon" style="background: #e1eeff;">
-                <img src="assets/img/coins/cirquity.png" width="40" height="40">
-              </div>
-              <h4 class="title"><a href="http://cirq.letshash.it/">Cirquity </a></h4>
-              <p class="description" id="cirq">
-                Miners: <span>0</span>
-                <br>
-                Last block: <span>0</span>
-                <br>
-                Algorithm: <span></span>
-                <br>
-              </p>
-              <br>
-              <p class="description text-center">
-                <a class="btn btn-primary" href="http://cirq.letshash.it/">go to mining pool</a>
-              </p>
-            </div>
-          </div>
-
-
-
-
-          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <div class="icon" style="background: #e1eeff;"><i class="ion-ios-world-outline"
-                  style="color:#2282ff;"></i></div>
-              <h4 class="title"><a href="http://klr.letshash.it">Klaro </a></h4>
-              <p class="description" id="klr">
-                Miners: <span>0</span>
-                <br>
-                Last block: <span>0</span>
-                <br>
-                Algorithm: <span></span>
-                <br>
-              </p>
-              <br>
-              <p class="description text-center">
-                <a class="btn btn-primary" href="http://klr.letshash.it">go to mining pool</a>
-              </p>
-            </div>
-          </div>
-
-
-
-
-          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200"">
-              <div class=" box">
-              <div class="icon" style="background: #e1eeff;"><i class="ion-ios-world-outline" style="color: #2282ff;"></i>
-              </div>
-              <h4 class="title"><a href="http://stch.letshash.it">Spitchcoin </a></h4>
-              <p class="description" id="stch">
-                Miners: <span>0</span>
-                <br>
-                Last block: <span>0</span>
-                <br>
-                Algorithm: <span></span>
-                <br>
-              </p>
-              <br>
-              <p class="description text-center">
-                <a class="btn btn-primary" href="http://stch.letshash.it">go to mining pool</a>
-              </p>
-            </div>
-          </div>
-
-
-          
-          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200"">
-                <div class=" box">
-              <div class="icon" style="background: #e1eeff;"><i class="ion-ios-world-outline" style="color: #2282ff;"></i>
-              </div>
-              <h4 class="title"><a href="http://tsx.letshash.it">Tesoro </a></h4>
-              <p class="description" id="tsx">
-                Miners: <span>0</span>
-                <br>
-                Last block: <span>0</span>
-                <br>
-                Algorithm: <span></span>
-                <br>
-              </p>
-              <br>
-              <p class="description text-center">
-                <a class="btn btn-primary" href="http://tsx.letshash.it">go to mining pool</a>
-              </p>
-            </div>
-          </div>
-
-
-
-          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200"">
-            <div class=" box">
-              <div class="icon" style="background: #e1eeff;"><i class="ion-ios-world-outline" style="color: #2282ff;"></i>
-              </div>
-              <h4 class="title"><a href="http://xuni.letshash.it">Ultranote Infinity</a></h4>
-              <p class="description" id="xuni">
-                Miners: <span>0</span>
-                <br>
-                Last block: <span>0</span>
-                <br>
-                Algorithm: <span></span>
-                <br>
-              </p>
-              <br>
-              <p class="description text-center">
-                <a class="btn btn-primary" href="http://xuni.letshash.it">go to mining pool</a>
-              </p>
-            </div>
-          </div>
-
-
-
-      </div>
+        <div class="row" id="pools">
+          <!-- generic content -->
+        </div>
 
       </div>
     </section><!-- End Services Section -->
@@ -278,17 +133,18 @@ var pools = [
     </section><!-- End Why Us Section -->
 
     <!-- ======= Call To Action Section ======= -->
-    <section id="call-to-action" class="call-to-action d-none">
+    <section id="call-to-action" class="call-to-action ">
       <div class="container" data-aos="zoom-out">
         <div class="row">
           <div class="col-lg-9 text-center text-lg-left">
-            <h3 class="cta-title">Call To Action</h3>
-            <p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-              anim id est laborum.</p>
+            <h3 class="cta-title">Contact Us</h3>
+            <p class="cta-text">
+              Contact us and we will answer all your questions
+            </p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Call To Action</a>
+            <a class="cta-btn align-middle" href="mailto:viktor.majko@gmail.com?subject=Letshash.it Question">Contact
+              Us</a>
           </div>
         </div>
 
@@ -355,7 +211,7 @@ var pools = [
         <div class="copyright">
           2019-2020 | &copy; Copyright <strong>letshash.it</strong>. | All Rights Reserved.
         </div>
- 
+
       </div>
     </footer><!-- End  Footer -->
 
@@ -367,6 +223,51 @@ var pools = [
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+      var blocks = '<div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">' +
+        '<div class="box">' +
+        '<div class="icon" style="background: #e1eeff;">' +
+        '<img src="assets/img/coins/{imageName}" width="40" height="40">' +
+        '</div>' +
+        '<h4 class="title"><a href="{url}">{name} </a></h4>' +
+        '<p class="description" id="stats">' +
+        'Miners: <span>{miners}</span>' +
+        '<br>' +
+        'Last block: <span>{lastBlock}</span>' +
+        '<br>' +
+        'Algorithm: <span>{algo}</span>' +
+        '<br>' +
+        '</p>' +
+        '<br>' +
+        '<p class="description text-center">' +
+        '<a class="btn btn-primary" href="{url}">go to mining pool</a>' +
+        '</p>' +
+        '</div>' +
+        '</div>'
+      ;
+
+      function process(data) {
+        var symbol = data.config.symbol;
+        var coin = pools[symbol];
+        $('#pools').append(blocks
+          .replace(/{url}/g, coin.url)
+          .replace(/{symbolName}/g, symbol)
+          .replace(/{name}/g, data.config.coin.toUpperCase())
+          .replace(/{imageName}/g, coin.img)
+          .replace(/{algo}/g, data.config.cnAlgorithm)
+          .replace(/{lastBlock}/g, data.pool.lastBlockFound)
+          .replace(/{miners}/g, data.pool.workers)
+          //.replace(/{payInterval}/g, data.config.paymentsInterval)
+        );
+      }
+
+      for (var key in pools) {
+        if (pools.hasOwnProperty(key)) {
+          $.getJSON(pools[key].api, process);
+        }
+      }
+    </script>
 
 </body>
 
