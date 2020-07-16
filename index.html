@@ -135,7 +135,7 @@
             rig monitoring. Solo mining is also available for all.</p>
         </header>
 
-        <div class="row p-5" id="pools">
+        <div class="row p-md-5" id="pools">
           <!-- generic content -->
         </div>
 
@@ -263,13 +263,13 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-      var blocks = '<div class="col-md-4 col-lg-3 coin">' +
+      var blocks = '<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 coin">' +
         '<div class="box">' +
         '<div class="icon" style="background: #e1eeff;">' +
         '<img src="assets/img/coins/{imageName}" width="40" height="40">' +
         '</div>' +
         '<h4 class="title"><a target="_blank" href="{url}">{name} </a></h4>' +
-        '<p class="description pl-5 pr-5" id="stats">' +
+        '<p class="description " id="stats">' +
         'Miners: <span class="float-right">{miners}</span>' +
         '<br>' +
         'Network Hash Rate: <span class="float-right">{lastBlock}</span>' +
@@ -310,7 +310,7 @@
           .replace(/{algo}/g, data.config.cnAlgorithm)
           .replace(/{lastBlock}/g, getReadableHashRateString(data.network.difficulty / data.config.coinDifficultyTarget))
           .replace(/{fee}/g, data.config.fee)
-          .replace(/{miners}/g, data.pool.workers + ' (' + data.pool.miners + ' workers)')
+          .replace(/{miners}/g, data.pool.miners + ' (' + data.pool.workers + ' workers)')
           ;
 
         $(b).appendTo('#pools');
