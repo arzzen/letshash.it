@@ -28,44 +28,44 @@
         "url": "http://letshash.it/cirq/",
         "img": "cirquity.png"
       },
-      
+
       "INZ": {
         "api": "https://letshash.it:8051/stats",
         "url": "http://letshash.it/inz/",
         "img": "ionize.png"
       },
-      
+
       "XEQ": {
         "api": "https://letshash.it:8106/stats",
         "url": "http://letshash.it/xeq/",
         "img": "equilibria.png"
       },
-      
+
       "KLR": {
         "api": "https://letshash.it:8209/stats",
         "url": "http://letshash.it/klr/",
         "img": "klaro.png"
-      },       
-      
+      },
+
       "NINJA": {
         "api": "https://letshash.it:8116/stats",
         "url": "http://letshash.it/ninja/",
-        "img": "ninjacoin.png" 
-      },      
-      
+        "img": "ninjacoin.png"
+      },
+
       "PGO": {
         "api": "https://letshash.it:8211/stats",
         "url": "http://letshash.it/pgo/",
         "img": "pengolino.png"
-      },       
+      },
 
-     "STCH": {
+      "STCH": {
         "api": "https://letshash.it:8003/stats",
         "url": "http://letshash.it/stch/",
         "img": "spitchcoin.png"
-      },       
-      
-     "TSX": {
+      },
+
+      "TSX": {
         "api": "https://letshash.it:8006/stats",
         "url": "http://letshash.it/tsx/",
         "img": "tesoro.png"
@@ -84,15 +84,15 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-transparent">
-    <div class="container d-flex align-items-center">
+    <div class="container text-center">
 
       <h1 class="logo mr-auto"><a href="index.html">LetsHash.it</a></h1>
 
-      <nav class="main-nav d-none d-lg-block">
+      <nav class=" d-none">
         <ul>
           <li class="active"><a href="index.html">Home</a></li>
           <!-- <li><a href="#about">About Us</a></li> -->
-          <li><a href="#services">Mining Pools</a></li>
+          <li><a class="menu-pools" href="#services">Mining Pools</a></li>
           <li><a class="d-none" href="#team">Team</a></li>
 
           <li><a class="d-none" href="#footer">Contact Us</a></li>
@@ -103,8 +103,8 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="clearfixe">
-    <div class="container d-flex h-100">
+  <section id="hero" class="clearfixe d-none">
+    <div class="container-flex d-flex h-100">
       <div class="row justify-content-center align-self-center" data-aos="fade-up">
         <div class="col-md-6 intro-info order-md-first order-last" data-aos="zoom-in" data-aos-delay="100">
           <h2>Mining pools <br><span>for professionals </span>by professionals!</h2>
@@ -117,23 +117,25 @@
           <img src="assets/img/illustration-12.png" alt="" class="img-fluid">
         </div>
       </div>
-
     </div>
   </section><!-- End Hero -->
 
   <main id="main">
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
-      <div class="container" data-aos="fade-up">
+    <section id="services" class="services section-bg" style="padding-top:150px">
+      <div class="container-flex" data-aos="fade-up">
 
         <header class="section-header">
           <h3>Cryptocurrency mining pools</h3>
-          <p>Cryptocurrency mining pool for beginners and professionals. Regular payments, tutorials, reliable servers,
+          <p>
+            Cryptocurrency mining pool for beginners and professionals.
+            Regular payments, tutorials,<br> reliable servers,
+
             rig monitoring. Solo mining is also available for all.</p>
         </header>
 
-        <div class="row" id="pools">
+        <div class="row p-5" id="pools">
           <!-- generic content -->
         </div>
 
@@ -175,7 +177,7 @@
           <div class="col-lg-9 text-center text-lg-left">
             <h3 class="cta-title">Contact Us</h3>
             <p class="cta-text">
-              Contact us and we will answer all your questions
+              Contact us and we will answer all your questions. Help & Support For Our Miners.
             </p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
@@ -261,41 +263,65 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-      var blocks = '<div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">' +
+      var blocks = '<div class="col-md-4 col-lg-3 coin">' +
         '<div class="box">' +
         '<div class="icon" style="background: #e1eeff;">' +
         '<img src="assets/img/coins/{imageName}" width="40" height="40">' +
         '</div>' +
         '<h4 class="title"><a target="_blank" href="{url}">{name} </a></h4>' +
-        '<p class="description" id="stats">' +
-        'Miners: <span>{miners}</span>' +
+        '<p class="description pl-5 pr-5" id="stats">' +
+        'Miners: <span class="float-right">{miners}</span>' +
         '<br>' +
-        'Last block: <span>{lastBlock}</span>' +
+        'Network Hash Rate: <span class="float-right">{lastBlock}</span>' +
         '<br>' +
-        'Algorithm: <span>{algo}</span>' +
+        'Algorithm: <span class="float-right">{algo}</span>' +
+        '<br>' +
+        'Fee: <span class="float-right">{fee}%</span>' +
         '<br>' +
         '</p>' +
         '<br>' +
         '<p class="description text-center">' +
-        '<a target="_blank" class="btn btn-primary" href="{url}">go to mining pool</a>' +
+        '<a target="_blank" class="btn btn-primary" href="{url}">start mining now!</a>' +
         '</p>' +
         '</div>' +
         '</div>'
-      ;
+        ;
+
+      function getReadableHashRateString(hashrate) {
+        var i = 0;
+        var byteUnits = [' H', ' KH', ' MH', ' GH', ' TH', ' PH'];
+        while (hashrate > 1000) {
+          hashrate = hashrate / 1000;
+          i++;
+        }
+        if (typeof hashrate != 'number')
+          hashrate = 0;
+        return hashrate.toFixed(2) + byteUnits[i];
+      }
 
       function process(data) {
         var symbol = data.config.symbol;
         var coin = pools[symbol];
-        $('#pools').append(blocks
+        var b = blocks
           .replace(/{url}/g, coin.url)
           .replace(/{symbolName}/g, symbol)
           .replace(/{name}/g, data.config.coin.toUpperCase())
           .replace(/{imageName}/g, coin.img)
           .replace(/{algo}/g, data.config.cnAlgorithm)
-          .replace(/{lastBlock}/g, data.pool.lastBlockFound)
-          .replace(/{miners}/g, data.pool.workers)
-          //.replace(/{payInterval}/g, data.config.paymentsInterval)
-        );
+          .replace(/{lastBlock}/g, getReadableHashRateString(data.network.difficulty / data.config.coinDifficultyTarget))
+          .replace(/{fee}/g, data.config.fee)
+          .replace(/{miners}/g, data.pool.workers + ' (' + data.pool.miners + ' workers)')
+          ;
+
+        $(b).appendTo('#pools');
+        var listitems = $('#pools').children('#pools .coin').get();
+        listitems.sort(function (a, b) {
+          return $(a).find('.title a').text().toUpperCase().localeCompare($(b).find('.title a').text().toUpperCase());
+        });
+
+        $.each(listitems, function (index, item) {
+          $('#pools').append(item);
+        });
       }
 
       for (var key in pools) {

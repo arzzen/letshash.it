@@ -20,10 +20,18 @@
       $('.back-to-top').fadeOut('slow');
     }
   });
+
   $('.back-to-top').click(function() {
     $('html, body').animate({
       scrollTop: 0
-    }, 1500, 'easeInOutExpo');
+    }, 500);
+    return false;
+  });
+
+  $('.menu-pools').click(function() {
+    $('html, body').animate({
+      scrollTop: $('#services').offset().top
+    }, 500);
     return false;
   });
 
@@ -56,11 +64,6 @@
         if ($(this).attr("href") == '#header') {
           scrollto = 0;
         }
-
-        $('html, body').animate({
-          scrollTop: scrollto
-        }, 1500, 'easeInOutExpo');
-
         if ($(this).parents('.main-nav, .mobile-nav').length) {
           $('.main-nav .active, .mobile-nav .active').removeClass('active');
           $(this).closest('li').addClass('active');
@@ -72,19 +75,6 @@
           $('.mobile-nav-overly').fadeOut();
         }
         return false;
-      }
-    }
-  });
-
-  // Activate smooth scroll on page load with hash links in the url
-  $(document).ready(function() {
-    if (window.location.hash) {
-      var initial_nav = window.location.hash;
-      if ($(initial_nav).length) {
-        var scrollto = $(initial_nav).offset().top - scrolltoOffset;
-        $('html, body').animate({
-          scrollTop: scrollto
-        }, 1500, 'easeInOutExpo');
       }
     }
   });
