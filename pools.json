@@ -2,72 +2,84 @@
     "CICO": {
       "api": "https://letshash.it:8007/stats",
       "url": "http://letshash.it/cico/",
-      "img": "cico.png"
+      "img": "cico.png",
+      "name": "COINICLES "
     },
 
     "CIRQ": {
       "api": "https://letshash.it:8002/stats",
       "url": "http://letshash.it/cirq/",
-      "img": "cirquity.png"
+      "img": "cirquity.png",
+      "name": "CIRQUITY"
     },
 
     "INZ": {
       "api": "https://letshash.it:8051/stats",
       "url": "http://letshash.it/inz/",
-      "img": "ionize.png"
+      "img": "ionize.png",
+      "name": "IONIZE"
     },
 
     "XEQ": {
       "api": "https://letshash.it:8106/stats",
       "url": "http://letshash.it/xeq/",
-      "img": "equilibria.png"
+      "img": "equilibria.png",
+      "name": "EQUILIBRIA"
     },
 
     "KLR": {
       "api": "https://letshash.it:8209/stats",
       "url": "http://letshash.it/klr/",
-      "img": "klaro.png"
+      "img": "klaro.png",
+      "name": "KLARO"
     },
     
     "LOKI": {
       "api": "https://letshash.it:8213/stats",
       "url": "http://letshash.it/loki/",
-      "img": "loki.png"
+      "img": "loki.png",
+      "name": "LOKI"
     },
     
     "NINJA": {
       "api": "https://letshash.it:8116/stats",
       "url": "http://letshash.it/ninja/",
-      "img": "ninjacoin.png"
+      "img": "ninjacoin.png",
+      "name": "NINJACOIN"
     },
     
     "NBR": {
       "api": "https://letshash.it:8215/stats",
       "url": "http://letshash.it/nbr/",
-      "img": "niobio.png"
+      "img": "niobio.png",
+      "name": "NIOBIOCASH"
     },
 
     "PGO": {
       "api": "https://letshash.it:8211/stats",
       "url": "http://letshash.it/pgo/",
-      "img": "pengolino.png"
+      "img": "pengolino.png",
+      "name": "PENGOLINCOIN"
     },
 
     "STCH": {
       "api": "https://letshash.it:8003/stats",
       "url": "http://letshash.it/stch/",
-      "img": "spitchcoin.png"
+      "img": "spitchcoin.png",
+      "name": "SPITCH"
     },
 
     "TSX": {
       "api": "https://letshash.it:8006/stats",
       "url": "http://letshash.it/tsx/",
-      "img": "tesoro.png"
+      "img": "tesoro.png",
+      "name": "TESORO"
     },
 
     "XUNI": {
       "api": "https://letshash.it:8210/stats",
       "url": "http://letshash.it/xuni/",
-      "img": "xuni.png"
+      "img": "xuni.png",
+      "name": "ULTRANOTE INFINITY"
     }
   }
