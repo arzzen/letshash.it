@@ -1,0 +1,73 @@
+{
+    "CICO": {
+      "api": "https://letshash.it:8007/stats",
+      "url": "http://letshash.it/cico/",
+      "img": "cico.png"
+    },
+
+    "CIRQ": {
+      "api": "https://letshash.it:8002/stats",
+      "url": "http://letshash.it/cirq/",
+      "img": "cirquity.png"
+    },
+
+    "INZ": {
+      "api": "https://letshash.it:8051/stats",
+      "url": "http://letshash.it/inz/",
+      "img": "ionize.png"
+    },
+
+    "XEQ": {
+      "api": "https://letshash.it:8106/stats",
+      "url": "http://letshash.it/xeq/",
+      "img": "equilibria.png"
+    },
+
+    "KLR": {
+      "api": "https://letshash.it:8209/stats",
+      "url": "http://letshash.it/klr/",
+      "img": "klaro.png"
+    },
+    
+    "LOKI": {
+      "api": "https://letshash.it:8213/stats",
+      "url": "http://letshash.it/loki/",
+      "img": "loki.png"
+    },
+    
+    "NINJA": {
+      "api": "https://letshash.it:8116/stats",
+      "url": "http://letshash.it/ninja/",
+      "img": "ninjacoin.png"
+    },
+    
+    "NBR": {
+      "api": "https://letshash.it:8215/stats",
+      "url": "http://letshash.it/nbr/",
+      "img": "niobio.png"
+    },
+
+    "PGO": {
+      "api": "https://letshash.it:8211/stats",
+      "url": "http://letshash.it/pgo/",
+      "img": "pengolino.png"
+    },
+
+    "STCH": {
+      "api": "https://letshash.it:8003/stats",
+      "url": "http://letshash.it/stch/",
+      "img": "spitchcoin.png"
+    },
+
+    "TSX": {
+      "api": "https://letshash.it:8006/stats",
+      "url": "http://letshash.it/tsx/",
+      "img": "tesoro.png"
+    },
+
+    "XUNI": {
+      "api": "https://letshash.it:8210/stats",
+      "url": "http://letshash.it/xuni/",
+      "img": "xuni.png"
+    }
+  }

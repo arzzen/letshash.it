@@ -15,81 +15,6 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
-  <script>
-    var pools = {
-      "CICO": {
-        "api": "https://letshash.it:8007/stats",
-        "url": "http://letshash.it/cico/",
-        "img": "cico.png"
-      },
-
-      "CIRQ": {
-        "api": "https://letshash.it:8002/stats",
-        "url": "http://letshash.it/cirq/",
-        "img": "cirquity.png"
-      },
-
-      "INZ": {
-        "api": "https://letshash.it:8051/stats",
-        "url": "http://letshash.it/inz/",
-        "img": "ionize.png"
-      },
-
-      "XEQ": {
-        "api": "https://letshash.it:8106/stats",
-        "url": "http://letshash.it/xeq/",
-        "img": "equilibria.png"
-      },
-
-      "KLR": {
-        "api": "https://letshash.it:8209/stats",
-        "url": "http://letshash.it/klr/",
-        "img": "klaro.png"
-      },
-      
-      "LOKI": {
-        "api": "https://letshash.it:8213/stats",
-        "url": "http://letshash.it/loki/",
-        "img": "loki.png"
-      },
-      
-      "NINJA": {
-        "api": "https://letshash.it:8116/stats",
-        "url": "http://letshash.it/ninja/",
-        "img": "ninjacoin.png"
-      },
-      
-      "NBR": {
-        "api": "https://letshash.it:8215/stats",
-        "url": "http://letshash.it/nbr/",
-        "img": "niobio.png"
-      },
-
-      "PGO": {
-        "api": "https://letshash.it:8211/stats",
-        "url": "http://letshash.it/pgo/",
-        "img": "pengolino.png"
-      },
-
-      "STCH": {
-        "api": "https://letshash.it:8003/stats",
-        "url": "http://letshash.it/stch/",
-        "img": "spitchcoin.png"
-      },
-
-      "TSX": {
-        "api": "https://letshash.it:8006/stats",
-        "url": "http://letshash.it/tsx/",
-        "img": "tesoro.png"
-      },
-
-      "XUNI": {
-        "api": "https://letshash.it:8210/stats",
-        "url": "http://letshash.it/xuni/",
-        "img": "xuni.png"
-      }
-    };
-  </script>
 </head>
 
 <body>
@@ -299,6 +224,7 @@
         '</div>'
         ;
 
+
       function getReadableHashRateString(hashrate) {
         var i = 0;
         var byteUnits = [' H', ' KH', ' MH', ' GH', ' TH', ' PH'];
@@ -310,6 +236,16 @@
           hashrate = 0;
         return hashrate.toFixed(2) + byteUnits[i];
       }
+
+      $.getJSON('pools.json', function (data) {
+        var pools = data;
+
+        for (var key in pools) {
+          if (pools.hasOwnProperty(key)) {
+            $.getJSON(pools[key].api, process);
+          }
+        }
+      });
 
       function process(data) {
         var symbol = data.config.symbol;
@@ -336,11 +272,6 @@
         });
       }
 
-      for (var key in pools) {
-        if (pools.hasOwnProperty(key)) {
-          $.getJSON(pools[key].api, process);
-        }
-      }
     </script>
 
 </body>
