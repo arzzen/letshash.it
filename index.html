@@ -237,17 +237,19 @@
         return hashrate.toFixed(2) + byteUnits[i];
       }
 
-      $.getJSON('pools.json', function (data) {
+      $.getJSON('https://letshash.it/pools.json', function (data) {
         var pools = data;
 
         for (var key in pools) {
           if (pools.hasOwnProperty(key)) {
-            $.getJSON(pools[key].api, process);
+            $.getJSON(pools[key].api, function(data) {
+              process(data, pools);
+            });
           }
         }
       });
 
-      function process(data) {
+      function process(data, pools) {
         var symbol = data.config.symbol;
         var coin = pools[symbol];
         var b = blocks
