@@ -1626,3 +1626,8 @@ section {
 #footer .credits a:hover {
   color: #0a98c0;
 }
+
+img {
+  top: -2px;
+position: relative;
+}
