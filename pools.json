@@ -1,18 +1,25 @@
 {
+    "CX": {
+      "api": "https://letshash.it:8218/stats",
+      "url": "http://letshash.it/cx/",
+      "img": "catalyst.png",
+      "name": "CATALYST"
+    },
+
     "CICO": {
       "api": "https://letshash.it:8007/stats",
       "url": "http://letshash.it/cico/",
       "img": "cico.png",
-      "name": "COINICLES "
+      "name": "COINICLES"
     },
-
+    
     "CIRQ": {
       "api": "https://letshash.it:8002/stats",
       "url": "http://letshash.it/cirq/",
       "img": "cirquity.png",
       "name": "CIRQUITY"
     },
-
+    
     "INZ": {
       "api": "https://letshash.it:8051/stats",
       "url": "http://letshash.it/inz/",
