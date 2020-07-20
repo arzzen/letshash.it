@@ -59,14 +59,7 @@
       "api": "https://letshash.it:8215/stats",
       "url": "http://letshash.it/nbr/",
       "img": "niobio.png",
-      "name": "NIOBIOCASH"
-    },
-
-    "PGO": {
-      "api": "https://letshash.it:8211/stats",
-      "url": "http://letshash.it/pgo/",
-      "img": "pengolino.png",
-      "name": "PENGOLINCOIN"
+      "name": "NIOBIO CASH"
     },
 
     "STCH": {
