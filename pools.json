@@ -33,7 +33,14 @@
       "img": "equilibria.png",
       "name": "EQUILIBRIA"
     },
-
+   
+    "ET": {
+      "api": "https://letshash.it:8220/stats",
+      "url": "http://letshash.it/et/",
+      "img": "etcoin.png",
+      "name": "ETCOIN"
+    },
+    
     "KLR": {
       "api": "https://letshash.it:8209/stats",
       "url": "http://letshash.it/klr/",
