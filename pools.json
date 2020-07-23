@@ -34,6 +34,13 @@
       "name": "EQUILIBRIA"
     },
    
+    "ETNXP": {
+      "api": "https://letshash.it:8222/stats",
+      "url": "http://letshash.it/etnxp/",
+      "img": "etnxp.png",
+      "name": "ELECTRONERO PULSE"
+    },
+      
     "ET": {
       "api": "https://letshash.it:8220/stats",
       "url": "http://letshash.it/et/",
