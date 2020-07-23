@@ -235,7 +235,7 @@
         '<br>' +
         'Pool Fee: <span class="float-right">{fee}%</span>' +
         '<br>' +
-        'Estimate market price: <span class="float-right price">0 USD</span>' +
+        'Estimate price: <span class="float-right price">0 USD</span>' +
         '<br>' +
         '</p>' +
         '<br>' +
@@ -414,7 +414,7 @@
 
         $.getJSON('https://api.exchangerate.host/latest?source=crypto&places=15&base=USD&symbols=' + symbol, function (data) {
           if(data.rates[symbol]) {
-            $('#' + symbol).find('.price').text(Number(toFixed(data.rates[symbol])).toFixed(10) + ' USD');
+            $('#' + symbol).find('.price').text(Number(toFixed(data.rates[symbol])).toFixed(9) + ' USD');
           }
         });
 
