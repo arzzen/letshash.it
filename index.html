@@ -205,27 +205,27 @@
     <!-- Vendor JS Files -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/ago.js"></script>
 
     <script>
-      var blocks = '<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 coin">' +
+      var blocks = '<div id="{symbolName}" class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 coin">' +
         '<div class="box">' +
         ' <div class="ribbon-wrapper d-none">  <div class="ribbon red">New</div> </div>' +
         '<div class="icon" style="background: #e1eeff;">' +
         '<img src="assets/img/coins/{imageName}" width="40" height="40">' +
         '</div>' +
         '<h4 class="title"><a target="_blank" href="{url}">{name} </a></h4>' +
+        '<div class="graph"><div class="chart" data-toggle="tooltip" data-placement="bottom" title="Difficulty" data-sparkline="{sparkline}"></div></div>' +
         '<p class="description " id="stats">' +
         'Miners: <span class="float-right">{miners}</span>' +
         '<br>' +
         'Network Hash Rate: <span class="float-right">{lastBlock}</span>' +
         '<br>' +
         'Pool Hash Rate: <span class="float-right">{propHashRate}</span>' +
-        '<br>' +
-        '<span class="float-right">{soloHashRate}</span>' +
         '<br>' +
         'Blocks Found Every: <span class="float-right">{blockSolvedTime}</span>' +
         '<br>' +
@@ -308,27 +308,31 @@
         return formatAmounts(amount, units[units.length - 1][1]);
       }
 
-      function pulseLiveUpdate() {
-        let stats_update = document.getElementById('statsUpdated');
-        stats_update.style.transition = 'opacity 100ms ease-out';
-        stats_update.style.opacity = 1;
-        setTimeout(function () {
-          stats_update.style.transition = 'opacity 7000ms linear';
-          stats_update.style.opacity = 0;
-        }, 500);
+      function home_GetGraphData(rawData) {
+        var graphData = {
+          names: [],
+          values: []
+        };
+        if (rawData) {
+          for (var i = 0, xy; xy = rawData[i]; i++) {
+            graphData.names.push(new Date(xy[0] * 1000).toLocaleString());
+            graphData.values.push(xy[1]);
+          }
+        }
+        return graphData;
       }
 
       function fetchStats() {
         //$('.coin').remove();
         $.getJSON('https://letshash.it/pools.json', function (data) {
           var pools = data;
-
           for (var key in pools) {
             if (pools.hasOwnProperty(key)) {
               $.getJSON(pools[key].api, function (data) {
                 process(data, pools);
               });
             }
+
           }
         });
       };
@@ -355,9 +359,9 @@
           .replace(/{fee}/g, data.config.fee)
           .replace(/{blockSolvedTime}/g, getReadableTime(data.network.difficulty / data.pool.hashrate))
           .replace(/{miners}/g, data.pool.miners + ' (' + data.pool.workers + ' workers)')
-          .replace(/{propHashRate}/g, 'PROP: ' + getReadableHashRateString(data.pool.hashrate) + '/sec')
-          .replace(/{soloHashRate}/g, 'SOLO: ' + getReadableHashRateString(data.pool.hashrateSolo) + '/sec')
+          .replace(/{propHashRate}/g, getReadableHashRateString(data.pool.hashrate) + '/sec')
           .replace(/{lastBlockFound}/g, lastBlockFound)
+          .replace(/{sparkline}/g, home_GetGraphData(data.charts.difficulty).values)
           ;
 
         if (coin.new) {
@@ -373,6 +377,22 @@
         $.each(listitems, function (index, item) {
           $('#pools').append(item);
         });
+
+        var sparkline = $('#' + symbol).find('.chart');
+        sparkline.sparkline(sparkline.data('sparkline').split(','), {
+          type: "line",
+          disableTooltips: true,
+          disableHighlight: true,
+          width: '100%',
+          lineColor: "#0cc2ff",
+          fillColor: false,
+          spotColor: false,
+          minSpotColor: false,
+          maxSpotColor: false
+        });
+        
+        $('[data-toggle="tooltip"]').tooltip();
+
       }
 
     </script>
