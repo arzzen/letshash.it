@@ -233,7 +233,9 @@
         '<br>' +
         'Algorithm: <span class="float-right">{algo}</span>' +
         '<br>' +
-        'Fee: <span class="float-right">{fee}%</span>' +
+        'Pool Fee: <span class="float-right">{fee}%</span>' +
+        '<br>' +
+        'Estimate market price: <span class="float-right price">0 USD</span>' +
         '<br>' +
         '</p>' +
         '<br>' +
@@ -322,6 +324,24 @@
         return graphData;
       }
 
+      function toFixed(x) {
+        if (Math.abs(x) < 1.0) {
+          var e = parseInt(x.toString().split('e-')[1]);
+          if (e) {
+            x *= Math.pow(10, e - 1);
+            x = '0.' + (new Array(e)).join('0') + x.toString().substring(2);
+          }
+        } else {
+          var e = parseInt(x.toString().split('+')[1]);
+          if (e > 20) {
+            e -= 20;
+            x /= Math.pow(10, e);
+            x += (new Array(e + 1)).join('0');
+          }
+        }
+        return x;
+      }
+
       function fetchStats() {
         //$('.coin').remove();
         $.getJSON('https://letshash.it/pools.json', function (data) {
@@ -336,7 +356,6 @@
           }
         });
       };
-
       fetchStats();
 
       function process(data, pools) {
@@ -390,8 +409,14 @@
           minSpotColor: false,
           maxSpotColor: false
         });
-        
+
         $('[data-toggle="tooltip"]').tooltip();
+
+        $.getJSON('https://api.exchangerate.host/latest?source=crypto&places=15&base=USD&symbols=' + symbol, function (data) {
+          if(data.rates[symbol]) {
+            $('#' + symbol).find('.price').text(Number(toFixed(data.rates[symbol])).toFixed(10) + ' USD');
+          }
+        });
 
       }
 
