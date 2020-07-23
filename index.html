@@ -15,12 +15,12 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
-  
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173084346-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'UA-173084346-1');
   </script>
@@ -208,11 +208,12 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/ago.js"></script>
 
     <script>
       var blocks = '<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 coin">' +
         '<div class="box">' +
-        ' <div class="ribbon-wrapper d-none">  <div class="ribbon red">New</div> </div>' + 
+        ' <div class="ribbon-wrapper d-none">  <div class="ribbon red">New</div> </div>' +
         '<div class="icon" style="background: #e1eeff;">' +
         '<img src="assets/img/coins/{imageName}" width="40" height="40">' +
         '</div>' +
@@ -221,6 +222,14 @@
         'Miners: <span class="float-right">{miners}</span>' +
         '<br>' +
         'Network Hash Rate: <span class="float-right">{lastBlock}</span>' +
+        '<br>' +
+        'Pool Hash Rate: <span class="float-right">{propHashRate}</span>' +
+        '<br>' +
+        '<span class="float-right">{soloHashRate}</span>' +
+        '<br>' +
+        'Blocks Found Every: <span class="float-right">{blockSolvedTime}</span>' +
+        '<br>' +
+        'Last Block Found: <span class="float-right">{lastBlockFound}</span>' +
         '<br>' +
         'Algorithm: <span class="float-right">{algo}</span>' +
         '<br>' +
@@ -235,6 +244,30 @@
         '</div>'
         ;
 
+      function timeSince(date) {
+        var seconds = Math.floor((new Date() - date) / 1000);
+        var interval = Math.floor(seconds / 31536000);
+        if (interval > 1) {
+          return interval + " years";
+        }
+        interval = Math.floor(seconds / 2592000);
+        if (interval > 1) {
+          return interval + " months";
+        }
+        interval = Math.floor(seconds / 86400);
+        if (interval > 1) {
+          return interval + " days";
+        }
+        interval = Math.floor(seconds / 3600);
+        if (interval > 1) {
+          return interval + " hours";
+        }
+        interval = Math.floor(seconds / 60);
+        if (interval > 1) {
+          return interval + " minutes";
+        }
+        return Math.floor(seconds) + " seconds";
+      }
 
       function getReadableHashRateString(hashrate) {
         var i = 0;
@@ -248,33 +281,86 @@
         return hashrate.toFixed(2) + byteUnits[i];
       }
 
-      $.getJSON('https://letshash.it/pools.json', function (data) {
-        var pools = data;
+      function getReadableTime(seconds) {
+        var units = [
+          [60, 'second'],
+          [60, 'minute'],
+          [24, 'hour'],
+          [7, 'day'],
+          [4, 'week'],
+          [12, 'month'],
+          [1, 'year']
+        ];
 
-        for (var key in pools) {
-          if (pools.hasOwnProperty(key)) {
-            $.getJSON(pools[key].api, function(data) {
-              process(data, pools);
-            });
-          }
+        function formatAmounts(amount, unit) {
+          var rounded = Math.round(amount);
+          var unit = unit + (rounded > 1 ? 's' : '');
+          return '' + rounded + ' ' + unit;
         }
-      });
+
+        var amount = seconds;
+        for (var i = 0; i < units.length; i++) {
+          if (amount < units[i][0]) {
+            return formatAmounts(amount, units[i][1]);
+          }
+          amount = amount / units[i][0];
+        }
+        return formatAmounts(amount, units[units.length - 1][1]);
+      }
+
+      function pulseLiveUpdate() {
+        let stats_update = document.getElementById('statsUpdated');
+        stats_update.style.transition = 'opacity 100ms ease-out';
+        stats_update.style.opacity = 1;
+        setTimeout(function () {
+          stats_update.style.transition = 'opacity 7000ms linear';
+          stats_update.style.opacity = 0;
+        }, 500);
+      }
+
+      function fetchStats() {
+        //$('.coin').remove();
+        $.getJSON('https://letshash.it/pools.json', function (data) {
+          var pools = data;
+
+          for (var key in pools) {
+            if (pools.hasOwnProperty(key)) {
+              $.getJSON(pools[key].api, function (data) {
+                process(data, pools);
+              });
+            }
+          }
+        });
+      };
+
+      fetchStats();
 
       function process(data, pools) {
         var symbol = data.config.symbol;
         var coin = pools[symbol];
+
+        var lastBlockFound = 'never'
+        if (data.pool.lastBlockFound) {
+          var d = new Date(parseInt(data.pool.lastBlockFound)).toISOString();
+          lastBlockFound = $.timeago(d);
+        }
+
         var b = blocks
           .replace(/{url}/g, coin.url)
           .replace(/{symbolName}/g, symbol)
           .replace(/{name}/g, data.config.coin.toUpperCase())
           .replace(/{imageName}/g, coin.img)
           .replace(/{algo}/g, data.config.cnAlgorithm)
-          .replace(/{lastBlock}/g, getReadableHashRateString(data.network.difficulty / data.config.coinDifficultyTarget))
+          .replace(/{lastBlock}/g, getReadableHashRateString(data.network.difficulty / data.config.coinDifficultyTarget) + "/sec")
           .replace(/{fee}/g, data.config.fee)
+          .replace(/{blockSolvedTime}/g, getReadableTime(data.network.difficulty / data.pool.hashrate))
           .replace(/{miners}/g, data.pool.miners + ' (' + data.pool.workers + ' workers)')
+          .replace(/{propHashRate}/g, 'PROP: ' + getReadableHashRateString(data.pool.hashrate) + '/sec')
+          .replace(/{soloHashRate}/g, 'SOLO: ' + getReadableHashRateString(data.pool.hashrateSolo) + '/sec')
+          .replace(/{lastBlockFound}/g, lastBlockFound)
           ;
 
-        if(coin.new) {
+        if (coin.new) {
           b = b.replace('ribbon-wrapper d-none', 'ribbon-wrapper');
         }
 
