@@ -95,6 +95,14 @@
       "new": false
     },
 
+      "ETRX": {
+      "api": "https://letshash.it:8224/stats",
+      "url": "http://letshash.it/etrx/",
+      "img": "etrx.png",
+      "name": "traaittPlatform",
+      "new": true
+    },
+    
     "TSX": {
       "api": "https://letshash.it:8006/stats",
       "url": "http://letshash.it/tsx/",
