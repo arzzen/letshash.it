@@ -86,7 +86,15 @@
       "name": "NIOBIO CASH",
       "new": false
     },
-
+    
+    "XAU": {
+      "api": "https://letshash.it:8226/stats",
+      "url": "http://letshash.it/xau/",
+      "img": "satori.png",
+      "name": "SATORI",
+      "new": true
+    },
+    
     "STCH": {
       "api": "https://letshash.it:8003/stats",
       "url": "http://letshash.it/stch/",
