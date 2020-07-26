@@ -1,4 +1,4 @@
-var blocks = '<div id="{symbolName}" class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 coin">' +
+var blocks = '<div id="{symbolName}" class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 coin">' +
     '<div class="box">' +
     ' <div class="ribbon-wrapper d-none">  <div class="ribbon red">New</div> </div>' +
     '<div class="icon" style="background: #e1eeff;">' +
