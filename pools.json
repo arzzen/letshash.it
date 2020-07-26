@@ -4,7 +4,8 @@
       "url": "http://letshash.it/cx/",
       "img": "catalyst.png",
       "name": "CATALYST",
-      "new": false
+      "new": false,
+      "active": true
     },
 
     "CICO": {
@@ -12,7 +13,8 @@
       "url": "http://letshash.it/cico/",
       "img": "cico.png",
       "name": "COINICLES",
-      "new": false
+      "new": false,
+      "active": true
     },
     
     "CIRQ": {
@@ -20,7 +22,8 @@
       "url": "http://letshash.it/cirq/",
       "img": "cirquity.png",
       "name": "CIRQUITY",
-      "new": false
+      "new": false,
+      "active": true
     },
     
     "INZ": {
@@ -28,7 +31,8 @@
       "url": "http://letshash.it/inz/",
       "img": "ionize.png",
       "name": "IONIZE",
-      "new": false
+      "new": false,
+      "active": true
     },
 
     "XEQ": {
@@ -36,7 +40,8 @@
       "url": "http://letshash.it/xeq/",
       "img": "equilibria.png",
       "name": "EQUILIBRIA",
-      "new": false
+      "new": false,
+      "active": true
     },
    
     "ETNXP": {
@@ -44,7 +49,8 @@
       "url": "http://letshash.it/etnxp/",
       "img": "etnxp.png",
       "name": "ELECTRONERO PULSE",
-      "new": true
+      "new": true,
+      "active": true
     },
       
     "ET": {
@@ -52,7 +58,8 @@
       "url": "http://letshash.it/et/",
       "img": "etcoin.png",
       "name": "ETCOIN",
-      "new": true
+      "new": true,
+      "active": true
     },
     
     "KLR": {
@@ -60,7 +67,8 @@
       "url": "http://letshash.it/klr/",
       "img": "klaro.png",
       "name": "KLARO",
-      "new": false
+      "new": false,
+      "active": true
     },
     
     "LOKI": {
@@ -68,7 +76,8 @@
       "url": "http://letshash.it/loki/",
       "img": "loki.png",
       "name": "LOKI",
-      "new": false
+      "new": false,
+      "active": true
     },
     
     "NINJA": {
@@ -76,7 +85,8 @@
       "url": "http://letshash.it/ninja/",
       "img": "ninjacoin.png",
       "name": "NINJACOIN",
-      "new": false
+      "new": false,
+      "active": true
     },
     
     "NBR": {
@@ -84,7 +94,8 @@
       "url": "http://letshash.it/nbr/",
       "img": "niobio.png",
       "name": "NIOBIO CASH",
-      "new": false
+      "new": false,
+      "active": true
     },
     
     "XAU": {
@@ -92,7 +103,8 @@
       "url": "http://letshash.it/xau/",
       "img": "satori.png",
       "name": "SATORI",
-      "new": true
+      "new": true,
+      "active": true
     },
     
     "STCH": {
@@ -100,7 +112,8 @@
       "url": "http://letshash.it/stch/",
       "img": "spitchcoin.png",
       "name": "SPITCH",
-      "new": false
+      "new": false,
+      "active": true
     },
 
       "ETRX": {
@@ -108,7 +121,8 @@
       "url": "http://letshash.it/etrx/",
       "img": "etrx.png",
       "name": "traaittPlatform",
-      "new": true
+      "new": true,
+      "active": true
     },
     
     "TSX": {
@@ -116,7 +130,8 @@
       "url": "http://letshash.it/tsx/",
       "img": "tesoro.png",
       "name": "TESORO",
-      "new": false
+      "new": false,
+      "active": true
     },
 
     "XUNI": {
@@ -124,6 +139,7 @@
       "url": "http://letshash.it/xuni/",
       "img": "xuni.png",
       "name": "ULTRANOTE INFINITY",
-      "new": false
+      "new": false,
+      "active": true
     }
   }
