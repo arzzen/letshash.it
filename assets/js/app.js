@@ -5,7 +5,7 @@ var blocks = '<div id="{symbolName}" class="col-12 col-sm-12 col-md-6 col-lg-6 c
     '<img src="assets/img/coins/{imageName}" width="40" height="40">' +
     '</div>' +
     '<h4 class="title"><a target="_blank" href="{url}">{name} </a></h4>' +
-    '<div class="graph"><div class="chart" data-toggle="tooltip" data-placement="bottom" title="Difficulty" data-sparkline="{sparkline}"></div></div>' +
+    '<div class="graph"><div class="chart" data-toggle="tooltip" data-placement="bottom" title="Difficulty" data-sparkline="0,{sparkline}"></div></div>' +
     '<p class="description " id="stats">' +
     'Miners: <span class="float-right">{miners}</span>' +
     '<br>' +
@@ -130,7 +130,7 @@ function toFixed(x) {
 
 function fetchStats() {
     //$('.coin').remove();
-    $.getJSON('https://letshash.it/pools.json', function (data) {
+    $.getJSON('pools.json', function (data) {
         var pools = data;
         for (var key in pools) {
             if (pools.hasOwnProperty(key) && pools[key].active) {
@@ -183,17 +183,26 @@ function process(data, pools) {
     });
 
     var sparkline = $('#' + symbol).find('.chart');
-    sparkline.sparkline(sparkline.data('sparkline').split(','), {
-        type: "line",
-        disableTooltips: true,
-        disableHighlight: true,
-        width: '100%',
-        lineColor: "#0cc2ff",
-        fillColor: false,
-        spotColor: false,
-        minSpotColor: false,
-        maxSpotColor: false
-    });
+    if (sparkline.data('sparkline')) {
+        var sparklineData = sparkline.data('sparkline').split(',');
+        sparklineData.shift();
+
+        if (sparklineData.length < 2) {
+            sparklineData.push(sparklineData[0]);
+        }
+
+        sparkline.sparkline(sparklineData, {
+            type: "line",
+            disableTooltips: true,
+            disableHighlight: true,
+            width: '100%',
+            lineColor: "#0cc2ff",
+            fillColor: false,
+            spotColor: false,
+            minSpotColor: false,
+            maxSpotColor: false
+        });
+    }
 
     $('[data-toggle="tooltip"]').tooltip();
 
