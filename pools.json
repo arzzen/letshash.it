@@ -1,4 +1,13 @@
 {
+    "TUBE": {
+      "api": "https://letshash.it:8229/stats",
+      "url": "http://letshash.it/tube/",
+      "img": "tube.png",
+      "name": "BITTUBECASH",
+      "new": true,
+      "active": true
+    },
+    
     "CX": {
       "api": "https://letshash.it:8218/stats",
       "url": "http://letshash.it/cx/",
@@ -14,7 +23,7 @@
       "img": "cico.png",
       "name": "COINICLES",
       "new": false,
-      "active": true
+      "active": false
     },
     
     "CIRQ": {
@@ -113,7 +122,7 @@
       "img": "spitchcoin.png",
       "name": "SPITCH",
       "new": false,
-      "active": true
+      "active": false
     },
 
       "ETRX": {
