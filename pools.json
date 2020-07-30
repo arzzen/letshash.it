@@ -1,13 +1,5 @@
-{
-    "BITTUBECASH": {
-      "api": "https://letshash.it:8229/stats",
-      "url": "http://letshash.it/tube/",
-      "img": "tube.png",
-      "name": "BITTUBECASH",
-      "new": true,
-      "active": true
-    },
-    
+{   
+ 
     "CX": {
       "api": "https://letshash.it:8218/stats",
       "url": "http://letshash.it/cx/",
@@ -17,6 +9,15 @@
       "active": true
     },
 
+    "TUBE": {
+      "api": "https://letshash.it:8229/stats",
+      "url": "http://letshash.it/tube/",
+      "img": "tube.png",
+      "name": "BITTUBECASH",
+      "new": true,
+      "active": true
+    },
+    
     "CICO": {
       "api": "https://letshash.it:8007/stats",
       "url": "http://letshash.it/cico/",
