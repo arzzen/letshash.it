@@ -156,7 +156,7 @@ function process(data, pools) {
     var b = blocks
         .replace(/{url}/g, coin.url)
         .replace(/{symbolName}/g, symbol)
-        .replace(/{name}/g, data.config.coin.toUpperCase())
+        .replace(/{name}/g, coin.name.toUpperCase())
         .replace(/{imageName}/g, coin.img)
         .replace(/{algo}/g, data.config.cnAlgorithm)
         .replace(/{lastBlock}/g, getReadableHashRateString(data.network.difficulty / data.config.coinDifficultyTarget) + "/sec")
