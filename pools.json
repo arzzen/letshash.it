@@ -18,13 +18,23 @@
       "active": true
  
     },
+ 
      "CZCO": {
       "api": "https://letshash.it:8231/stats",
       "url": "http://letshash.it/czco/",
       "img": "crazycoin.png",
       "name": "CRAZYCOIN",
       "new": true,
-      "active": false
+      "active": true
+    },
+     
+     "XLA": {
+      "api": "https://letshash.it:8233/stats",
+      "url": "http://letshash.it/xla/",
+      "img": "scala.png",
+      "name": "SCALA",
+      "new": true,
+      "active": true
     },
  
     "CICO": {
