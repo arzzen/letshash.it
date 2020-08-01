@@ -45,7 +45,16 @@
       "new": false,
       "active": false
     },
-    
+     
+     "XFG": {
+      "api": "https://letshash.it:8235/stats",
+      "url": "http://letshash.it/xfg/",
+      "img": "fango.png",
+      "name": "FANDOMGOLD",
+      "new": true,
+      "active": true
+    },
+     
     "CIRQ": {
       "api": "https://letshash.it:8002/stats",
       "url": "http://letshash.it/cirq/",
