@@ -33,7 +33,7 @@ function updateLiveStats(data) {
 // Update global informations
 function updateIndex() {
     updateText('coinSymbol', lastStats.config.symbol);
-    updateText('coinName', lastStats.config.coin);
+    updateText('coinName', lastStats.config.coin.toUpperCase());
     updateText('coinAlgo', lastStats.config.cnAlgorithm)
     updateText('g_networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget) + '/sec');
     updateText('g_poolHashrate', getReadableHashRateString(lastStats.pool.hashrate) + '/sec');
