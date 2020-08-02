@@ -1,183 +1,199 @@
-{   
- 
-    "CX": {
-      "api": "https://letshash.it:8218/stats",
-      "url": "http://letshash.it/cx/",
-      "img": "catalyst.png",
-      "name": "CATALYST",
-      "new": false,
-      "active": true
-    },
+{
+  "CX": {
+    "api": "https://letshash.it:8218/stats",
+    "url": "http://letshash.it/cx/",
+    "img": "catalyst.png",
+    "name": "CATALYST",
+    "new": false,
+    "active": true,
+    "algo": ""
+  },
 
-    "TUBE": {
-      "api": "https://letshash.it:8229/stats",
-      "url": "http://letshash.it/tube/",
-      "img": "tube.png",
-      "name": "BITTUBECASH",
-      "new": true,
-      "active": true
- 
-    },
- 
-     "CZCO": {
-      "api": "https://letshash.it:8231/stats",
-      "url": "http://letshash.it/czco/",
-      "img": "crazycoin.png",
-      "name": "CRAZYCOIN",
-      "new": true,
-      "active": true
-    },
-     
-     "XLA": {
-      "api": "https://letshash.it:8233/stats",
-      "url": "http://letshash.it/xla/",
-      "img": "scala.png",
-      "name": "SCALA",
-      "new": true,
-      "active": true
-    },
- 
-    "CICO": {
-      "api": "https://letshash.it:8007/stats",
-      "url": "http://letshash.it/cico/",
-      "img": "cico.png",
-      "name": "COINICLES",
-      "new": false,
-      "active": false
-    },
-     
-     "XFG": {
-      "api": "https://letshash.it:8235/stats",
-      "url": "http://letshash.it/xfg/",
-      "img": "fango.png",
-      "name": "FANDOMGOLD",
-      "new": true,
-      "active": true
-    },
-     
-    "CIRQ": {
-      "api": "https://letshash.it:8002/stats",
-      "url": "http://letshash.it/cirq/",
-      "img": "cirquity.png",
-      "name": "CIRQUITY",
-      "new": false,
-      "active": true
-    },
-    
-    "INZ": {
-      "api": "https://letshash.it:8051/stats",
-      "url": "http://letshash.it/inz/",
-      "img": "ionize.png",
-      "name": "IONIZE",
-      "new": false,
-      "active": true
-    },
+  "TUBE": {
+    "api": "https://letshash.it:8229/stats",
+    "url": "http://letshash.it/tube/",
+    "img": "tube.png",
+    "name": "BITTUBECASH",
+    "new": true,
+    "active": true,
+    "algo": ""
+  },
 
-    "XEQ": {
-      "api": "https://letshash.it:8106/stats",
-      "url": "http://letshash.it/xeq/",
-      "img": "equilibria.png",
-      "name": "EQUILIBRIA",
-      "new": false,
-      "active": true
-    },
-   
-    "ETNXP": {
-      "api": "https://letshash.it:8222/stats",
-      "url": "http://letshash.it/etnxp/",
-      "img": "etnxp.png",
-      "name": "ELECTRONERO PULSE",
-      "new": true,
-      "active": true
-    },
-      
-    "ET": {
-      "api": "https://letshash.it:8220/stats",
-      "url": "http://letshash.it/et/",
-      "img": "etcoin.png",
-      "name": "ETCOIN",
-      "new": true,
-      "active": true
-    },
-    
-    "KLR": {
-      "api": "https://letshash.it:8209/stats",
-      "url": "http://letshash.it/klr/",
-      "img": "klaro.png",
-      "name": "KLARO",
-      "new": false,
-      "active": true
-    },
-    
-    "LOKI": {
-      "api": "https://letshash.it:8213/stats",
-      "url": "http://letshash.it/loki/",
-      "img": "loki.png",
-      "name": "LOKI",
-      "new": false,
-      "active": true
-    },
-    
-    "NINJA": {
-      "api": "https://letshash.it:8116/stats",
-      "url": "http://letshash.it/ninja/",
-      "img": "ninjacoin.png",
-      "name": "NINJACOIN",
-      "new": false,
-      "active": true
-    },
-    
-    "NBR": {
-      "api": "https://letshash.it:8215/stats",
-      "url": "http://letshash.it/nbr/",
-      "img": "niobio.png",
-      "name": "NIOBIO CASH",
-      "new": false,
-      "active": true
-    },
-    
-    "XAU": {
-      "api": "https://letshash.it:8226/stats",
-      "url": "http://letshash.it/xau/",
-      "img": "satori.png",
-      "name": "SATORI",
-      "new": true,
-      "active": true
-    },
-    
-    "STCH": {
-      "api": "https://letshash.it:8003/stats",
-      "url": "http://letshash.it/stch/",
-      "img": "spitchcoin.png",
-      "name": "SPITCH",
-      "new": false,
-      "active": false
-    },
+  "CZCO": {
+    "api": "https://letshash.it:8231/stats",
+    "url": "http://letshash.it/czco/",
+    "img": "crazycoin.png",
+    "name": "CRAZYCOIN",
+    "new": true,
+    "active": true,
+    "algo": ""
+  },
 
-      "ETRX": {
-      "api": "https://letshash.it:8224/stats",
-      "url": "http://letshash.it/etrx/",
-      "img": "etrx.png",
-      "name": "traaittPlatform",
-      "new": true,
-      "active": true
-    },
-    
-    "TSX": {
-      "api": "https://letshash.it:8006/stats",
-      "url": "http://letshash.it/tsx/",
-      "img": "tesoro.png",
-      "name": "TESORO",
-      "new": false,
-      "active": true
-    },
+  "XLA": {
+    "api": "https://letshash.it:8233/stats",
+    "url": "http://letshash.it/xla/",
+    "img": "scala.png",
+    "name": "SCALA",
+    "new": true,
+    "active": true,
+    "algo": ""
+  },
 
-    "XUNI": {
-      "api": "https://letshash.it:8210/stats",
-      "url": "http://letshash.it/xuni/",
-      "img": "xuni.png",
-      "name": "ULTRANOTE INFINITY",
-      "new": false,
-      "active": true
-    }
+  "CICO": {
+    "api": "https://letshash.it:8007/stats",
+    "url": "http://letshash.it/cico/",
+    "img": "cico.png",
+    "name": "COINICLES",
+    "new": false,
+    "active": false
+  },
+
+  "XFG": {
+    "api": "https://letshash.it:8235/stats",
+    "url": "http://letshash.it/xfg/",
+    "img": "fango.png",
+    "name": "FANDOMGOLD",
+    "new": true,
+    "active": true,
+    "algo": ""
+  },
+
+  "CIRQ": {
+    "api": "https://letshash.it:8002/stats",
+    "url": "http://letshash.it/cirq/",
+    "img": "cirquity.png",
+    "name": "CIRQUITY",
+    "new": false,
+    "active": true,
+    "algo": ""
+  },
+
+  "INZ": {
+    "api": "https://letshash.it:8051/stats",
+    "url": "http://letshash.it/inz/",
+    "img": "ionize.png",
+    "name": "IONIZE",
+    "new": false,
+    "active": true,
+    "algo": ""
+  },
+
+  "XEQ": {
+    "api": "https://letshash.it:8106/stats",
+    "url": "http://letshash.it/xeq/",
+    "img": "equilibria.png",
+    "name": "EQUILIBRIA",
+    "new": false,
+    "active": true,
+    "algo": ""
+  },
+
+  "ETNXP": {
+    "api": "https://letshash.it:8222/stats",
+    "url": "http://letshash.it/etnxp/",
+    "img": "etnxp.png",
+    "name": "ELECTRONERO PULSE",
+    "new": true,
+    "active": true,
+    "algo": ""
+  },
+
+  "ET": {
+    "api": "https://letshash.it:8220/stats",
+    "url": "http://letshash.it/et/",
+    "img": "etcoin.png",
+    "name": "ETCOIN",
+    "new": true,
+    "active": true,
+    "algo": ""
+  },
+
+  "KLR": {
+    "api": "https://letshash.it:8209/stats",
+    "url": "http://letshash.it/klr/",
+    "img": "klaro.png",
+    "name": "KLARO",
+    "new": false,
+    "active": true,
+    "algo": ""
+  },
+
+  "LOKI": {
+    "api": "https://letshash.it:8213/stats",
+    "url": "http://letshash.it/loki/",
+    "img": "loki.png",
+    "name": "LOKI",
+    "new": false,
+    "active": true,
+    "algo": ""
+  },
+
+  "NINJA": {
+    "api": "https://letshash.it:8116/stats",
+    "url": "http://letshash.it/ninja/",
+    "img": "ninjacoin.png",
+    "name": "NINJACOIN",
+    "new": false,
+    "active": true,
+    "algo": ""
+  },
+
+  "NBR": {
+    "api": "https://letshash.it:8215/stats",
+    "url": "http://letshash.it/nbr/",
+    "img": "niobio.png",
+    "name": "NIOBIO CASH",
+    "new": false,
+    "active": true,
+    "algo": ""
+  },
+
+  "XAU": {
+    "api": "https://letshash.it:8226/stats",
+    "url": "http://letshash.it/xau/",
+    "img": "satori.png",
+    "name": "SATORI",
+    "new": true,
+    "active": true,
+    "algo": ""
+  },
+
+  "STCH": {
+    "api": "https://letshash.it:8003/stats",
+    "url": "http://letshash.it/stch/",
+    "img": "spitchcoin.png",
+    "name": "SPITCH",
+    "new": false,
+    "active": false
+  },
+
+  "ETRX": {
+    "api": "https://letshash.it:8224/stats",
+    "url": "http://letshash.it/etrx/",
+    "img": "etrx.png",
+    "name": "traaittPlatform",
+    "new": true,
+    "active": true,
+    "algo": ""
+  },
+
+  "TSX": {
+    "api": "https://letshash.it:8006/stats",
+    "url": "http://letshash.it/tsx/",
+    "img": "tesoro.png",
+    "name": "TESORO",
+    "new": false,
+    "active": true,
+    "algo": ""
+  },
+
+  "XUNI": {
+    "api": "https://letshash.it:8210/stats",
+    "url": "http://letshash.it/xuni/",
+    "img": "xuni.png",
+    "name": "ULTRANOTE INFINITY",
+    "new": false,
+    "active": true,
+    "algo": ""
   }
+}

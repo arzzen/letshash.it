@@ -81,10 +81,20 @@
             <div class="card-body card-body pt-0 pb-0" style="position: relative;">
                 <div class="infoBox hoverExpandEffect">
 
-                    <div class="content">
-                        <div class="text"><span tkey="poolHashrate">Pool Hash Rate</span></div>
-                        <div class="h2"><span id="poolHashrate">N/A</span> <span class="smallText">(<span
-                                    id="hashPower">0%</span>)</span></div>
+                    <div class="content pb-0">
+                        <div class="text">
+                            <span tkey="poolHashrate">Pool Hash Rate</span>
+                        </div>
+                        <div class="h2">
+                            <span id="poolHashrate">N/A</span> <span class="smallText">(<span
+                                    id="hashPower">0%</span>)</span>
+
+                            <small class="text-muted d-block">
+                                <span id="poolHashrateSolo" class="text-muted">N/A</span>,
+                                <span id="hashPowerSolo">0%<span>
+                            </small>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -323,7 +333,11 @@
             }
 
             updateText('poolHashrate', getReadableHashRateString(lastStats.pool.hashrate) + '/sec');
+            updateText('poolHashrateSolo', 'Solo: ' + getReadableHashRateString(lastStats.pool.hashrateSolo) + '/sec');
             updateText('blocksTotal', lastStats.pool.totalBlocks.toString());
+
+            var hashPowerSolo = lastStats.pool.hashrateSolo / (lastStats.network.difficulty / lastStats.config.coinDifficultyTarget) * 100;
+            updateText('hashPowerSolo', hashPowerSolo.toFixed(2) + '%');
 
             var hashPower = lastStats.pool.hashrate / (lastStats.network.difficulty / lastStats.config.coinDifficultyTarget) * 100;
             updateText('hashPower', hashPower.toFixed(2) + '%');
