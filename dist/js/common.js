@@ -211,7 +211,7 @@ function getReadableHashRateString(hashrate) {
     }
 
     if (parentCoin == 'tube') {
-        var byteUnits = [' g', ' kG', ' MG', ' GG', ' TG', ' PG'];
+        var byteUnits = [' G', ' kG', ' MG', ' GG', ' TG', ' PG'];
     }
 
     return parseFloat(hashrate).toFixed(2) + byteUnits[i];

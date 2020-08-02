@@ -158,7 +158,7 @@ function process(data, pools) {
         .replace(/{symbolName}/g, symbol)
         .replace(/{name}/g, coin.name.toUpperCase())
         .replace(/{imageName}/g, coin.img)
-        .replace(/{algo}/g, data.config.cnAlgorithm)
+        .replace(/{algo}/g, coin.algo || data.config.cnAlgorithm)
         .replace(/{lastBlock}/g, getReadableHashRateString(data.network.difficulty / data.config.coinDifficultyTarget) + "/sec")
         .replace(/{fee}/g, data.config.fee)
         .replace(/{blockSolvedTime}/g, getReadableTime(data.network.difficulty / data.pool.hashrate))

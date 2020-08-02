@@ -65,7 +65,7 @@
     "name": "CIRQUITY",
     "new": false,
     "active": true,
-    "algo": ""
+    "algo": "cryptonight"
   },
 
   "INZ": {
