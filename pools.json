@@ -16,7 +16,7 @@
     "name": "BITTUBECASH",
     "new": true,
     "active": true,
-    "algo": ""
+    "algo": "Cuckaroo29b"
   },
 
    "DTOR": {
@@ -26,7 +26,7 @@
     "name": "DTORO",
     "new": true,
     "active": true,
-    "algo": "Cryptonight V7"
+    "algo": "Cryptonight-lite/1"
   },
   
   "CZCO": {
@@ -65,7 +65,7 @@
     "name": "FANDOMGOLD",
     "new": true,
     "active": true,
-    "algo": ""
+    "algo": "Cryptonight"
   },
 
   "CIRQ": {
@@ -75,7 +75,7 @@
     "name": "CIRQUITY",
     "new": false,
     "active": true,
-    "algo": "cryptonight"
+    "algo": "Cryptonight-pico/trtl"
   },
 
   "INZ": {
@@ -85,7 +85,7 @@
     "name": "IONIZE",
     "new": false,
     "active": true,
-    "algo": ""
+    "algo": "Cryptonight-pico/trtl"
   },
 
   "XEQ": {
@@ -95,7 +95,7 @@
     "name": "EQUILIBRIA",
     "new": false,
     "active": true,
-    "algo": ""
+    "algo": "Cryptonight-GPU"
   },
 
   "ETNXP": {
@@ -105,7 +105,7 @@
     "name": "ELECTRONERO PULSE",
     "new": true,
     "active": true,
-    "algo": ""
+    "algo": "Cryptonight-Fast"
   },
 
   "ET": {
@@ -115,7 +115,7 @@
     "name": "ETCOIN",
     "new": true,
     "active": true,
-    "algo": ""
+    "algo": "RandomX"
   },
 
   "KLR": {
@@ -125,7 +125,7 @@
     "name": "KLARO",
     "new": false,
     "active": true,
-    "algo": ""
+    "algo": "Randomx/Klaro"
   },
 
   "LOKI": {
@@ -135,7 +135,7 @@
     "name": "LOKI",
     "new": false,
     "active": true,
-    "algo": ""
+    "algo": "RandomX/Loki"
   },
 
   "NINJA": {
@@ -145,7 +145,7 @@
     "name": "NINJACOIN",
     "new": false,
     "active": true,
-    "algo": ""
+    "algo": "Argon2d/Ninja"
   },
 
   "NBR": {
@@ -155,7 +155,7 @@
     "name": "NIOBIO CASH",
     "new": false,
     "active": true,
-    "algo": ""
+    "algo": "Cryptonight-Heavy"
   },
 
   "XAU": {
@@ -165,7 +165,7 @@
     "name": "SATORI",
     "new": true,
     "active": true,
-    "algo": ""
+    "algo": "Cryptonight-Pico/trtl"
   },
 
   "STCH": {
@@ -184,7 +184,7 @@
     "name": "traaittPlatform",
     "new": true,
     "active": true,
-    "algo": ""
+    "algo": "Argon2d/Chukwa"
   },
 
   "TSX": {
@@ -194,7 +194,7 @@
     "name": "TESORO",
     "new": false,
     "active": true,
-    "algo": ""
+    "algo": "RandomX"
   },
 
   "XUNI": {
@@ -204,6 +204,6 @@
     "name": "ULTRANOTE INFINITY",
     "new": false,
     "active": true,
-    "algo": ""
+    "algo": "Cryptonight-Conceal"
   }
 }
