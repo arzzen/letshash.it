@@ -221,20 +221,20 @@
             block.maturity = toGo + ' to go';
         }
         else if (toGo == 1) {
-            block.maturity = "<i class='fa fa-spinner fa-spin'></i>";
+            block.maturity = "<i class='fa fa-spinner fa-spin'>waiting</i>";
         }
         else if (toGo <= 0) {
-            block.maturity = "<i class='fa fa-unlock-alt'></i>";
+            block.maturity = "<i class='fa fa-unlock-alt'>unlock</i>";
         }
 
         switch (block.orphaned) {
             case '0':
                 block.status = 'unlocked';
-                block.maturity = "<i class='fa fa-unlock-alt'></i>";
+                block.maturity = "<i class='fa fa-unlock-alt'>unlock</i>";
                 break;
             case '1':
                 block.status = 'orphaned';
-                block.maturity = "<i class='fa fa-times'></i>";
+                block.maturity = "<i class='fa fa-times'>orphaned</i>";
                 block.reward = 0;
                 break;
             default:
@@ -271,14 +271,27 @@
             reward = getReadableCoins(block.reward, null, true);
         }
 
-        var columns =
-            '<td class="col1">' + formatDate(block.time) + '</td>' +
-            '<td class="col2">' + reward + '</td>' +
-            '<td class="col3">' + block.height + '</td>' +
-            '<td class="col4">' + block.difficulty + '</td>' +
-            '<td class="col5">' + formatBlockLink(block.hash) + '</td>' +
-            '<td class="col6" title="' + block.shares + ' shares submitted">' + formatLuck(block.difficulty, block.shares) + '</td>' +
-            '<td class="col7">' + block.maturity + '</td>';
+        console.log(block)
+
+        if (formatDate(block.time) == 'Invalid Date') {
+            var columns =
+                '<td class="col1">' + formatDate(block.shares) + '</td>' +
+                '<td class="col2">' + reward + '</td>' +
+                '<td class="col3">' + block.height + '</td>' +
+                '<td class="col4">' + block.difficulty + '</td>' +
+                '<td class="col5">' + formatBlockLink(block.time) + '</td>' +
+                '<td class="col6" title="' + block.shares + ' shares submitted">' + formatLuck(block.difficulty, block.time) + '</td>' +
+                '<td class="col7">' + block.maturity + '</td>';
+        } else {
+            var columns =
+                '<td class="col1">' + formatDate(block.time) + '</td>' +
+                '<td class="col2">' + reward + '</td>' +
+                '<td class="col3">' + block.height + '</td>' +
+                '<td class="col4">' + block.difficulty + '</td>' +
+                '<td class="col5">' + formatBlockLink(block.hash) + '</td>' +
+                '<td class="col6" title="' + block.shares + ' shares submitted">' + formatLuck(block.difficulty, block.shares) + '</td>' +
+                '<td class="col7">' + block.maturity + '</td>';
+        }
 
         row.innerHTML = columns;
 
