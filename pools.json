@@ -6,7 +6,7 @@
     "name": "CATALYST",
     "new": false,
     "active": true,
-    "algo": ""
+    "algo": "Argon2d/Chukwa"
   },
 
   "TUBE": {
@@ -19,6 +19,16 @@
     "algo": ""
   },
 
+   "DTOR": {
+    "api": "https://letshash.it:8239/stats",
+    "url": "http://letshash.it/dtor/",
+    "img": "dtor.png",
+    "name": "DTORO",
+    "new": true,
+    "active": true,
+    "algo": "Cryptonight V7"
+  },
+  
   "CZCO": {
     "api": "https://letshash.it:8231/stats",
     "url": "http://letshash.it/czco/",
@@ -26,7 +36,7 @@
     "name": "CRAZYCOIN",
     "new": true,
     "active": true,
-    "algo": ""
+    "algo": "Cryptonight"
   },
 
   "XLA": {
@@ -36,7 +46,7 @@
     "name": "SCALA",
     "new": true,
     "active": true,
-    "algo": ""
+    "algo": "Panthera"
   },
 
   "CICO": {
