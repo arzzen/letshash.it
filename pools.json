@@ -20,7 +20,7 @@
   },
 
    "DTOR": {
-    "api": "https://letshash.it:8239/stats",
+    "api": "https://letshash.it:8238/stats",
     "url": "http://letshash.it/dtor/",
     "img": "dtor.png",
     "name": "DTORO",
