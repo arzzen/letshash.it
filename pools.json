@@ -23,10 +23,10 @@
     "api": "https://letshash.it:8238/stats",
     "url": "http://letshash.it/dtor/",
     "img": "dtor.png",
-    "name": "DTORO",
+    "name": "DTOR",
     "new": true,
     "active": true,
-    "algo": "Cryptonight-lite/1"
+    "algo": "Cryptonight V7"
   },
   
   "CZCO": {
@@ -65,7 +65,7 @@
     "name": "FANDOMGOLD",
     "new": true,
     "active": true,
-    "algo": "Cryptonight"
+    "algo": "Cryptonight V8"
   },
 
   "CIRQ": {
@@ -75,7 +75,7 @@
     "name": "CIRQUITY",
     "new": false,
     "active": true,
-    "algo": "Cryptonight-pico/trtl"
+    "algo": "Cryptonight-Pico/trtl"
   },
 
   "INZ": {
@@ -85,7 +85,7 @@
     "name": "IONIZE",
     "new": false,
     "active": true,
-    "algo": "Cryptonight-pico/trtl"
+    "algo": "Cryptonight-Pico/trtl"
   },
 
   "XEQ": {
