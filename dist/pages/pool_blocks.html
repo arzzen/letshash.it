@@ -109,7 +109,12 @@
             if (xhrGetBlocks) xhrGetBlocks.abort();
         },
         update: function () {
-            updateText('blocksTotal', lastStats.pool.totalBlocks.toString());
+            if (lastStats.pool.totalBlocks) {
+                updateText('blocksTotal', lastStats.pool.totalBlocks.toString());
+            } else {
+                updateText('blocksTotal', lastStats.pool.stats.blocksFound.toString());
+            }
+
             if (lastStats.pool.lastBlockFound) {
                 var d = new Date(parseInt(lastStats.pool.lastBlockFound)).toISOString();
                 $('#lastBlockFound').timeago('update', d);

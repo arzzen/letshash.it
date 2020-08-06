@@ -131,7 +131,7 @@
             if (xhrGetPayments) xhrGetPayments.abort();
         },
         update: function () {
-            updateText('paymentsTotal', lastStats.pool.totalPayments.toString());
+            updateText('paymentsTotal', lastStats.pool.totalPayments === null ? 0 : lastStats.pool.totalPayments.toString());
             updateText('paymentsTotalPaid', lastStats.pool.totalMinersPaid.toString());
             updateText('paymentsInterval', getReadableTime(lastStats.config.paymentsInterval));
             updateText('paymentsMinimum', getReadableCoins(lastStats.config.minPaymentThreshold));

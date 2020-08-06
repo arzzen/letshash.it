@@ -334,7 +334,12 @@
 
             updateText('poolHashrate', getReadableHashRateString(lastStats.pool.hashrate) + '/sec');
             updateText('poolHashrateSolo', 'Solo: ' + getReadableHashRateString(lastStats.pool.hashrateSolo) + '/sec');
-            updateText('blocksTotal', lastStats.pool.totalBlocks.toString());
+
+            if (lastStats.pool.totalBlocks) {
+                updateText('blocksTotal', lastStats.pool.totalBlocks.toString());
+            } else {
+                updateText('blocksTotal', lastStats.pool.stats.blocksFound.toString());
+            }
 
             var hashPowerSolo = lastStats.pool.hashrateSolo / (lastStats.network.difficulty / lastStats.config.coinDifficultyTarget) * 100;
             updateText('hashPowerSolo', hashPowerSolo.toFixed(2) + '%');
@@ -354,13 +359,17 @@
             updateText('poolWorkers', lastStats.pool.workers.toString());
 
             var totalFee = lastStats.config.fee;
-            if (Object.keys(lastStats.config.donation).length) {
-                var totalDonation = 0;
-                for (var i in lastStats.config.donation) {
-                    totalDonation += lastStats.config.donation[i];
+
+            if (lastStats.config.donation) {
+                if (Object.keys(lastStats.config.donation).length) {
+                    var totalDonation = 0;
+                    for (var i in lastStats.config.donation) {
+                        totalDonation += lastStats.config.donation[i];
+                    }
+                    totalFee += totalDonation;
                 }
-                totalFee += totalDonation;
             }
+
             updateText('poolFee', (totalFee > 0 && totalFee != 100 ? floatToString(totalFee) : (totalFee == 100 ? '100' : '0')) + '%');
 
             updateText('paymentsInterval', getReadableTime(lastStats.config.paymentsInterval));
