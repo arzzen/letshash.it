@@ -53,18 +53,18 @@
     <div class="card">
         <div class="card-body" style="position: relative;">
 
-            <h3 class="pb-2">
-                <span tkey="poolBlocks">Pool Blocks</span>
-            </h3>
-
             <!-- Chart -->
-            <div id="blocksChart" class="card padding-15 padding-t-5 padding-b-5">
-                <h4 id="blocksChartTitle">Blocks found</h4>
+            <div id="blocksChart" class="padding-15 padding-t-5 padding-b-5">
+                <h3 class="pb-2" id="blocksChartTitle">Blocks found</h3>
                 <div class="chart" style="height:200px;">
                     <canvas id="blocksChartObj"></canvas>
                     <a class="chart-style"></a>
                 </div>
             </div>
+
+            <h3 class="pb-2">
+                <span tkey="poolBlocks">Pool Blocks</span>
+            </h3>
 
             <!-- Report -->
             <div class=" push-up-10">
@@ -101,7 +101,7 @@
 <!-- Javascript -->
 <script>
     // Hide blocks chart on load
-    $('#blocksChart').hide();
+    //$('#blocksChart').hide();
 
     // Update current page
     currentPage = {
@@ -163,18 +163,18 @@
             bordercolor = colorelem.css('border-left-color');
             borderwidth = parseFloat(colorelem.css('width'));
         }
-        if (bgcolor === null) bgcolor = 'rgba(3, 169, 244, .4)';
-        if (bordercolor === null) bordercolor = '#03a9f4';
+        if (bgcolor === null) bgcolor = '#000000';
+        if (bordercolor === null) bordercolor = '#000000';
         if (borderwidth === null || isNaN(borderwidth)) borderwidth = 1;
 
         var chart = new Chart(document.getElementById('blocksChartObj'), {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: labels,
                 datasets: [{
                     label: 'Blocks',
                     data: values,
-                    fill: false,
+                    fill: true,
                     backgroundColor: bgcolor,
                     borderColor: bordercolor,
                     borderWidth: borderwidth
@@ -206,15 +206,28 @@
     // Parse block data
     function parseBlock(height, serializedBlock) {
         var parts = serializedBlock.split(':');
-        var block = {
-            height: parseInt(height),
-            hash: parts[0],
-            time: parts[1],
-            difficulty: parseInt(parts[2]),
-            shares: parseInt(parts[3]),
-            orphaned: parts[4],
-            reward: parts[5]
-        };
+
+        if (parts[1].indexOf('...') === -1) {
+            var block = {
+                height: parseInt(height),
+                hash: parts[0],
+                time: parts[1],
+                difficulty: parseInt(parts[2]),
+                shares: parseInt(parts[3]),
+                orphaned: parts[4],
+                reward: parts[5]
+            };
+        } else {
+            var block = {
+                height: parseInt(height),
+                hash: parts[2],
+                time: parts[3],
+                difficulty: parseInt(parts[4]),
+                shares: parseInt(parts[5]),
+                orphaned: parts[6],
+                reward: parts[7]
+            };
+        }
 
         var toGo = lastStats.config.depth - (lastStats.network.height - block.height) + 1;
         if (toGo > 1) {
@@ -271,8 +284,6 @@
             reward = getReadableCoins(block.reward, null, true);
         }
 
-        console.log(block)
-
         if (formatDate(block.time) == 'Invalid Date') {
             var columns =
                 '<td class="col1">' + formatDate(block.shares) + '</td>' +
@@ -309,8 +320,7 @@
             var existingRow = document.getElementById('blockRow' + block.height);
             if (existingRow && existingRow.getAttribute('data-json') !== blockJson) {
                 $(existingRow).replaceWith(getBlockRowElement(block, blockJson));
-            }
-            else if (!existingRow) {
+            } else if (!existingRow) {
                 var blockElement = getBlockRowElement(block, blockJson);
 
                 var inserted = false;
