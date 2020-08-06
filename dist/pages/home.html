@@ -421,12 +421,13 @@
 
                 var chartObj = new Chart(document.getElementById('chart_' + graphType), {
                     type: 'line',
+                    height: 100,
                     data: {
                         labels: graphData[graphType].names,
                         datasets: [{
                             data: graphData[graphType].values,
                             dataType: graphType,
-                            fill: true,
+                            fill: false,
                             backgroundColor: bgcolor,
                             borderColor: bordercolor,
                             borderWidth: borderwidth
@@ -472,6 +473,7 @@
                         }
                     }
                 });
+
                 $chart.closest('.poolChart').show();
             }
         }
