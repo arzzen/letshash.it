@@ -55,7 +55,8 @@
     "img": "cico.png",
     "name": "COINICLES",
     "new": false,
-    "active": false
+    "active": true,
+    "algo": "RandomX/Loki"
   },
 
   "XFG": {
