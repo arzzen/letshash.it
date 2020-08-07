@@ -34,7 +34,7 @@ function updateLiveStats(data) {
 function updateIndex() {
     updateText('coinSymbol', lastStats.config.symbol);
     updateText('coinName', lastStats.config.coin.toUpperCase());
-    updateText('coinAlgo', lastStats.config.cnAlgorithm)
+
     updateText('g_networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget) + '/sec');
     updateText('g_poolHashrate', getReadableHashRateString(lastStats.pool.hashrate) + '/sec');
     if (lastStats.miner && lastStats.miner.hashrate) {
@@ -63,6 +63,8 @@ function loadLiveStats(reload) {
 
         $.getJSON('../pools.json', function (data) {
             var coin = data[$('#coinSymbol').text()];
+
+            updateText('coinAlgo', coin.algo);
 
             $('#coinImage img').attr("src", "../assets/img/coins/" + coin.img);
             if (coin.active) {

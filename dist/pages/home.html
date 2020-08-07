@@ -5,10 +5,9 @@
             <div class="card-body">
                 <div class="d-flex align-items-center">
                     <div class="subheader"><span tkey="hashRate">Hash Rate</span></div>
-
                 </div>
-                <div class="">
-                    <div class="chart">
+                <div class="mt-2">
+                    <div class="">
                         <canvas id="chart_hashrate"></canvas>
                         <a class="chart-style"></a>
                     </div>
@@ -22,10 +21,9 @@
             <div class="card-body">
                 <div class="d-flex align-items-center">
                     <div class="subheader"><span tkey="difficulty">Difficulty</span></div>
-
                 </div>
-                <div class="">
-                    <div class="chart ">
+                <div class="mt-2">
+                    <div class=" ">
                         <canvas id="chart_diff"></canvas>
                         <a class="chart-style"></a>
                     </div>
@@ -39,10 +37,9 @@
             <div class="card-body">
                 <div class="d-flex align-items-center">
                     <div class="subheader"><span tkey="miners">Miners</span></div>
-
                 </div>
-                <div class="">
-                    <div class="chart">
+                <div class="mt-2">
+                    <div class="">
                         <canvas id="chart_miners"></canvas>
                         <a class="chart-style"></a>
                     </div>
@@ -56,10 +53,9 @@
             <div class="card-body">
                 <div class="d-flex align-items-center">
                     <div class="subheader"><span tkey="workers">Workers</span></div>
-
                 </div>
-                <div class="">
-                    <div class="chart">
+                <div class="mt-2">
+                    <div class="">
                         <canvas id="chart_workers"></canvas>
                         <a class="chart-style"></a>
                     </div>
@@ -419,9 +415,13 @@
                 if (bordercolor === null) bordercolor = '#03a9f4';
                 if (borderwidth === null || isNaN(borderwidth)) borderwidth = 1;
 
-                var chartObj = new Chart(document.getElementById('chart_' + graphType), {
+                $('#chart_' + graphType).attr('style', '');
+                var cx = document.getElementById('chart_' + graphType);
+                cx.style.width = '100%';
+                cx.style.height = '100px';
+
+                var chartObj = new Chart(cx, {
                     type: 'line',
-                    height: 100,
                     data: {
                         labels: graphData[graphType].names,
                         datasets: [{
@@ -430,12 +430,12 @@
                             fill: false,
                             backgroundColor: bgcolor,
                             borderColor: bordercolor,
-                            borderWidth: borderwidth
+                            borderWidth: 2,
                         }]
                     },
                     options: {
                         animation: false,
-                        responsive: true,
+                        responsive: false,
                         maintainAspectRatio: false,
                         legend: { display: false },
                         elements: { point: { radius: 0, hitRadius: 10, hoverRadius: 5 } },
@@ -458,7 +458,7 @@
                             }]
                         },
                         layout: {
-                            padding: { top: 0, left: 10, right: 5, bottom: 0 }
+                            padding: { top: 0, left: 0, right: 0, bottom: 0 }
                         },
                         tooltips: {
                             callbacks: {
