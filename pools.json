@@ -151,7 +151,7 @@
   
   "NBCX": {
     "api": "https://letshash.it:8243/stats",
-    "url": "http://letshash.it/nbcx/",
+    "url": "http://letshash.it/nbxc/",
     "img": "nibble.png",
     "name": "NIBBLE",
     "new": true,
