@@ -149,7 +149,7 @@
     "algo": "Argon2d/Ninja"
   },
   
-  "NBCX": {
+  "NBXC": {
     "api": "https://letshash.it:8243/stats",
     "url": "http://letshash.it/nbxc/",
     "img": "nibble.png",
