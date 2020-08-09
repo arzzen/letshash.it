@@ -148,6 +148,16 @@
     "active": true,
     "algo": "Argon2d/Ninja"
   },
+  
+  "NBCX": {
+    "api": "https://letshash.it:8243/stats",
+    "url": "http://letshash.it/nbcx/",
+    "img": "nibble.png",
+    "name": "NIBBLE",
+    "new": true,
+    "active": true,
+    "algo": "Cryptonight-Conceal"
+  },
 
   "NBR": {
     "api": "https://letshash.it:8215/stats",
