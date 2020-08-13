@@ -89,6 +89,15 @@
     "algo": "Cryptonight-Pico/trtl"
   },
 
+  "KVA": {
+    "api": "https://letshash.it:8245/stats",
+    "url": "http://letshash.it/kva/",
+    "img": "keva.png",
+    "name": "KEVACOIN",
+    "new": true,
+    "active": true,
+    "algo": "RandomX/Keva"
+
   "XEQ": {
     "api": "https://letshash.it:8106/stats",
     "url": "http://letshash.it/xeq/",
