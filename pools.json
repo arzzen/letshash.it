@@ -97,6 +97,7 @@
     "new": true,
     "active": true,
     "algo": "RandomX/Keva"
+  },
 
   "XEQ": {
     "api": "https://letshash.it:8106/stats",
