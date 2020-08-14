@@ -102,7 +102,7 @@
   "XEQ": {
     "api": "https://letshash.it:8106/stats",
     "url": "http://letshash.it/xeq/",
-    "img": "equilibria.png",
+    "img": "xeq.png",
     "name": "EQUILIBRIA",
     "new": false,
     "active": true,
@@ -125,7 +125,7 @@
     "img": "etcoin.png",
     "name": "ETCOIN",
     "new": true,
-    "active": true,
+    "active": false,
     "algo": "RandomX"
   },
 
@@ -145,7 +145,7 @@
     "img": "loki.png",
     "name": "LOKI",
     "new": false,
-    "active": true,
+    "active": false,
     "algo": "RandomX/Loki"
   },
 
@@ -179,9 +179,9 @@
     "algo": "Cryptonight-Heavy"
   },
 
-  "XAU": {
+  "SAU": {
     "api": "https://letshash.it:8226/stats",
-    "url": "http://letshash.it/xau/",
+    "url": "http://letshash.it/sau/",
     "img": "satori.png",
     "name": "SATORI",
     "new": true,
