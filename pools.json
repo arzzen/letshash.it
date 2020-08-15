@@ -119,6 +119,16 @@
     "algo": "Cryptonight-Fast"
   },
 
+  "LTNX": {
+    "api": "https://letshash.it:8249/stats",
+    "url": "http://letshash.it/ltnx/",
+    "img": "ltnx.png",
+    "name": "LITENERO",
+    "new": true,
+    "active": true,
+    "algo": "Cryptonight-Fast"
+  },
+  
   "ET": {
     "api": "https://letshash.it:8220/stats",
     "url": "http://letshash.it/et/",
