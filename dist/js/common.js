@@ -90,6 +90,9 @@ function routePage(loadedCallback) {
             if (currentPage) currentPage.update();
             if (loadedCallback) loadedCallback();
 
+            if ($('#navbar-menu').css('display') != "none") {
+                $('.navbar-toggler').click();
+            }
 
             $.getJSON('../pools.json', function (data) {
                 var coin = data[$('#coinSymbol').text()];
