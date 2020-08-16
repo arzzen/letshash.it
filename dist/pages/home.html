@@ -316,7 +316,7 @@
         update: function () {
             $('#networkLastBlockFound').timeago('update', new Date(lastStats.lastblock.timestamp * 1000).toISOString());
 
-            if (byteUnitType == 'G') {
+            if (byteUnitType && byteUnitType == 'G') {
                 updateText('networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget * 40) + '/sec');
             } else {
                 updateText('networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget) + '/sec');

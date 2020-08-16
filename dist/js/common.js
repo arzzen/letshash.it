@@ -237,7 +237,7 @@ function getReadableHashRateString(hashrate) {
         }
     }
 
-    if (byteUnitType == 'G') {
+    if (byteUnitType && byteUnitType == 'G') {
         var byteUnits = [' G', ' kG', ' MG', ' GG', ' TG', ' PG'];
     }
 

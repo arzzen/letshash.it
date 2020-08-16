@@ -35,7 +35,7 @@ function updateIndex() {
     updateText('coinSymbol', lastStats.config.symbol);
     updateText('coinName', lastStats.config.coin.toUpperCase());
 
-    if (byteUnitType == 'G') {
+    if (byteUnitType && byteUnitType == 'G') {
         updateText('g_networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget * 40) + '/sec');
     } else {
         updateText('g_networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget) + '/sec');
