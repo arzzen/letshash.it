@@ -35,7 +35,12 @@ function updateIndex() {
     updateText('coinSymbol', lastStats.config.symbol);
     updateText('coinName', lastStats.config.coin.toUpperCase());
 
-    updateText('g_networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget) + '/sec');
+    if (byteUnitType == 'G') {
+        updateText('g_networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget * 40) + '/sec');
+    } else {
+        updateText('g_networkHashrate', getReadableHashRateString(lastStats.network.difficulty / lastStats.config.coinDifficultyTarget) + '/sec');
+    }
+
     updateText('g_poolHashrate', getReadableHashRateString(lastStats.pool.hashrate) + '/sec');
     if (lastStats.miner && lastStats.miner.hashrate) {
         updateText('g_userHashrate', getReadableHashRateString(lastStats.miner.hashrate) + '/sec');
@@ -60,27 +65,6 @@ function loadLiveStats(reload) {
         if (!reload) {
             routePage(fetchLiveStats);
         }
-
-        $.getJSON('../pools.json', function (data) {
-            var coin = data[$('#coinSymbol').text()];
-
-            updateText('coinAlgo', coin.algo);
-
-            $('#coinImage img').attr("src", "../assets/img/coins/" + coin.img);
-            if (coin.active) {
-                let dropdown = $('#coins, #mCoins');
-                dropdown.empty();
-                dropdown.append('<option selected="true" disabled>Other pools</option>');
-                dropdown.prop('selectedIndex', 0);
-                $.each(data, function (key, entry) {
-                    dropdown.append($('<option></option>').attr('value', entry.url).text(entry.name.toUpperCase() + " (" + key + ")"));
-                });
-
-                $(document).on('change', '#coins, #mCoins', function () {
-                    window.location = $(this).val();
-                });
-            }
-        });
     });
 }
 
@@ -108,13 +92,13 @@ $(function () {
 
     // Add support informations to menu    
     if (typeof telegram !== 'undefined' && telegram) {
-        $('#contacts').append('<a class="btn btn-link ml-1 btn-sm" target="_new" href="' + telegram + '"><span tkey="telegram">Telegram group</span></a>');
+        $('#contacts').append('<a class="btn btn-info ml-1 btn-sm" target="_new" href="' + telegram + '"><span tkey="telegram">Telegram group</span></a>');
     }
     if (typeof discord !== 'undefined' && discord) {
-        $('#contacts').append('<a class="btn btn-link ml-1 btn-sm" target="_new" href="' + discord + '"><span tkey="discord">Discord</span></a>');
+        $('#contacts').append('<a class="btn btn-info ml-1 btn-sm" target="_new" href="' + discord + '"><span tkey="discord">Discord</span></a>');
     }
     if (typeof email !== 'undefined' && email) {
-        $('#contacts').append('<a class="btn btn-link ml-1 btn-sm" target="_new" href="mailto:' + email + '"><span tkey="contactUs">Contact Us</span></a>');
+        $('#contacts').append('<a class="btn btn-info ml-1 btn-sm" target="_new" href="mailto:' + email + '"><span tkey="contactUs">Contact Us</span></a>');
     }
 
     if (typeof langs !== 'undefined' && langs) {

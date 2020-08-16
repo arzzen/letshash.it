@@ -19,7 +19,7 @@
     "algo": "Cuckaroo29b"
   },
 
-   "DTOR": {
+  "DTOR": {
     "api": "https://letshash.it:8238/stats",
     "url": "http://letshash.it/dtor/",
     "img": "dtor.png",
@@ -28,7 +28,7 @@
     "active": true,
     "algo": "Cryptonight V7"
   },
-  
+
   "CZCO": {
     "api": "https://letshash.it:8231/stats",
     "url": "http://letshash.it/czco/",
@@ -128,7 +128,7 @@
     "active": true,
     "algo": "Cryptonight-Fast"
   },
-  
+
   "ET": {
     "api": "https://letshash.it:8220/stats",
     "url": "http://letshash.it/et/",
@@ -168,7 +168,7 @@
     "active": true,
     "algo": "Argon2d/Ninja"
   },
-  
+
   "NBXC": {
     "api": "https://letshash.it:8243/stats",
     "url": "http://letshash.it/nbxc/",

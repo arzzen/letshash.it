@@ -213,6 +213,7 @@
         var parts = serializedBlock.split(':');
 
         if (parts[1].indexOf('...') === -1 && parts[1].length < 12) {
+            // like tube coin
             var block = {
                 height: parseInt(height),
                 hash: parts[0],
@@ -222,6 +223,7 @@
                 orphaned: parts[4],
                 reward: parts[5]
             };
+
         } else if (parts[2].length < 15 && parts[1].length > 12) {
             var block = {
                 height: parseInt(parts[0]),
@@ -243,6 +245,7 @@
                 reward: parts[7]
             };
         }
+
 
         var toGo = lastStats.config.depth - (lastStats.network.height - block.height) + 1;
         if (toGo > 1) {
