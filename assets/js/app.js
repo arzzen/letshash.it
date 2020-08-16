@@ -9,9 +9,13 @@ var blocks = '<div id="{symbolName}" class="col-12 col-sm-12 col-md-6 col-lg-6 c
     '<p class="description " id="stats">' +
     'Miners: <span class="float-right">{miners}</span>' +
     '<br>' +
+    'Solo miners: <span class="float-right">{soloMiners}</span>' +
+    '<br>' +
     'Network Hash Rate: <span class="float-right">{lastBlock}</span>' +
     '<br>' +
     'Pool Hash Rate: <span class="float-right">{propHashRate}</span>' +
+    '<br>' +
+    'Solo Hash Rate: <span class="float-right">{soloHashRate}</span>' +
     '<br>' +
     'Blocks Found Every: <span class="float-right">{blockSolvedTime}</span>' +
     '<br>' +
@@ -128,6 +132,7 @@ function toFixed(x) {
     return x;
 }
 
+let totalMiners = totalWorkers = 0;
 function fetchStats() {
     //$('.coin').remove();
     $.getJSON('pools.json', function (data) {
@@ -163,10 +168,16 @@ function process(data, pools) {
         .replace(/{fee}/g, data.config.fee)
         .replace(/{blockSolvedTime}/g, getReadableTime(data.network.difficulty / data.pool.hashrate))
         .replace(/{miners}/g, data.pool.miners + ' (' + data.pool.workers + ' workers)')
+        .replace(/{soloMiners}/g, (typeof data.pool.minersSolo !== "undefined" ? data.pool.minersSolo + ' (' + data.pool.workersSolo + ' workers)' : 'n/a (n/a workers)'))
         .replace(/{propHashRate}/g, getReadableHashRateString(data.pool.hashrate) + '/sec')
+        .replace(/{soloHashRate}/g, getReadableHashRateString(data.pool.hashrateSolo) + '/sec')
         .replace(/{lastBlockFound}/g, lastBlockFound)
         .replace(/{sparkline}/g, home_GetGraphData(data.charts.difficulty).values)
         ;
+    totalMiners += data.pool.miners;
+    totalWorkers += data.pool.workers;
+    $('#totalMiners').html(totalMiners);
+    $('#totalWorkers').html(totalWorkers);
 
     if (coin.new) {
         b = b.replace('ribbon-wrapper d-none', 'ribbon-wrapper');
@@ -211,6 +222,10 @@ function process(data, pools) {
             $('#' + symbol).find('.price').text(Number(toFixed(data.rates[symbol])).toFixed(9) + ' USD');
         }
     });
+
+    setTimeout(function () {
+        window.location.reload(1);
+    }, 300000);
 
 }
 
