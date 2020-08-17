@@ -156,7 +156,7 @@ function renderData(data) {
     $('#totalOwed').text(getReadableCoins(data.totalOwed));
     $('#totalPaid').text(getReadableCoins(data.totalPaid));
     $('#totalMined').text(getReadableCoins(data.totalRevenue));
-    $('#profit').text(getReadableCoins(data.totalRevenue - data.totalOwed - data.totalPaid));
+    $('#profit').text(getReadableCoins((data.totalRevenue + data.totalRevenueSolo) - data.totalOwed - data.totalPaid)));
     $('#blocksUnlocked').text(data.blocksUnlocked);
     $('#averageLuck').html(formatLuck(data.totalDiff, data.totalShares));
     $('#blocksOrphaned').text(data.blocksOrphaned);
