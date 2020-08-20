@@ -100,7 +100,7 @@
   },
   
  "ETNX": {
-    "api": "https://letshash.it:8523/stats",
+    "api": "https://letshash.it:8253/stats",
     "url": "http://letshash.it/etnx/",
     "img": "etnx.png",
     "name": "ELECTRONERO",
