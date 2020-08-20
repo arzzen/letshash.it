@@ -98,7 +98,17 @@
     "active": true,
     "algo": "Cryptonight-Fast"
   },
-
+  
+ "ETNX": {
+    "api": "https://letshash.it:8523/stats",
+    "url": "http://letshash.it/etnx/",
+    "img": "etnx.png",
+    "name": "ELECTRONERO",
+    "new": true,
+    "active": true,
+    "algo": "Cryptonight-Fast"
+  },
+  
   "LTNX": {
     "api": "https://letshash.it:8249/stats",
     "url": "http://letshash.it/ltnx/",
