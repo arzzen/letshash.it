@@ -119,13 +119,23 @@
     "algo": "Cryptonight-Fast"
   },
 
+  "GLDX": {
+    "api": "https://letshash.it:8255/stats",
+    "url": "http://letshash.it/gldx/",
+    "img": "gldx.png",
+    "name": "GOLDNERO",
+    "new": true,
+    "active": true,
+    "algo": "Cryptonight-Fast"
+  },
+  
   "ET": {
     "api": "https://letshash.it:8220/stats",
     "url": "http://letshash.it/et/",
     "img": "etcoin.png",
     "name": "ETCOIN",
     "new": true,
-    "active": true,
+    "active": false,
     "algo": "RandomX"
   },
 
@@ -185,7 +195,7 @@
     "img": "etrx.png",
     "name": "traaittPlatform",
     "new": true,
-    "active": true,
+    "active": false,
     "algo": "Argon2d/Chukwa"
   },
 
