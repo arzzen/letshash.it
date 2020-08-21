@@ -135,7 +135,7 @@
     "img": "etcoin.png",
     "name": "ETCOIN",
     "new": true,
-    "active": false,
+    "active": true,
     "algo": "RandomX"
   },
 
