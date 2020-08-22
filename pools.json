@@ -188,7 +188,17 @@
     "active": true,
     "algo": "Cryptonight-Pico/trtl"
   },
-
+  
+  "SAU": {
+    "api": "https://letshash.it:8257/stats",
+    "url": "http://letshash.it/spwn/",
+    "img": "spwn.png",
+    "name": "SPAWNCOIN",
+    "new": true,
+    "active": true,
+    "algo": "Cryptonight-Pico/trtl"
+  },
+  
   "ETRX": {
     "api": "https://letshash.it:8224/stats",
     "url": "http://letshash.it/etrx/",
