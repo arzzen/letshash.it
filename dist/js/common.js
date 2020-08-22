@@ -79,13 +79,13 @@ function routePage(loadedCallback) {
 
     loadTranslations();
 
+    /*
     switch (parentCoin.toLowerCase()) {
         case 'klaro':
             page = 'getting_started-klaro.html';
             break;
     }
-
-    console.log(page, parentCoin);
+    */
 
     xhrPageLoading = $.ajax({
         url: '../dist/pages/' + page,
