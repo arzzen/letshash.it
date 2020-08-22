@@ -95,25 +95,27 @@ function routePage(loadedCallback) {
             }
 
             $.getJSON('../pools.json', function (data) {
-                var coin = data[$('#coinSymbol').text()];
+                if ($('#coinSymbol').length > 0) {
+                    var coin = data[$('#coinSymbol').text()];
 
-                updateText('coinAlgo', coin.algo);
-                updateText('gs_coinAlgo', coin.algo);
+                    updateText('coinAlgo', coin.algo);
+                    updateText('gs_coinAlgo', coin.algo);
 
 
-                $('#coinImage img').attr("src", "../assets/img/coins/" + coin.img);
-                if (coin.active) {
-                    let dropdown = $('#coins, #mCoins');
-                    dropdown.empty();
-                    dropdown.append('<option selected="true" disabled>Other pools</option>');
-                    dropdown.prop('selectedIndex', 0);
-                    $.each(data, function (key, entry) {
-                        dropdown.append($('<option></option>').attr('value', entry.url).text(entry.name.toUpperCase() + " (" + key + ")"));
-                    });
+                    $('#coinImage img').attr("src", "../assets/img/coins/" + coin.img);
+                    if (coin.active) {
+                        let dropdown = $('#coins, #mCoins');
+                        dropdown.empty();
+                        dropdown.append('<option selected="true" disabled>Other pools</option>');
+                        dropdown.prop('selectedIndex', 0);
+                        $.each(data, function (key, entry) {
+                            dropdown.append($('<option></option>').attr('value', entry.url).text(entry.name.toUpperCase() + " (" + key + ")"));
+                        });
 
-                    $(document).on('change', '#coins, #mCoins', function () {
-                        window.location = $(this).val();
-                    });
+                        $(document).on('change', '#coins, #mCoins', function () {
+                            window.location = $(this).val();
+                        });
+                    }
                 }
             });
 

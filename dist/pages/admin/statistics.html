@@ -41,7 +41,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Profit (before tx fees) -->
     <div class="col-lg-3 col-sm-4">
         <div class="infoBox hoverExpandEffect">
@@ -54,7 +54,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Registered Addresses -->
     <div class="col-lg-3 col-sm-4">
         <div class="infoBox hoverExpandEffect">
@@ -89,11 +89,12 @@
             </div>
             <div class="content">
                 <div class="text">Blocks Orphaned</div>
-                <div class="value"><span id="blocksOrphaned">...</span> <span class="smallText">(<span id="orphanPercent">0%</span>)</span></div>
+                <div class="value"><span id="blocksOrphaned">...</span> <span class="smallText">(<span
+                            id="orphanPercent">0%</span>)</span></div>
             </div>
         </div>
     </div>
-    
+
     <!-- Average Luck (shares/diff) -->
     <div class="col-lg-3 col-sm-4">
         <div class="infoBox hoverExpandEffect">
@@ -106,65 +107,118 @@
             </div>
         </div>
     </div>
-        
+
+    <!-- Real Profit -->
+    <div class="col-lg-3 col-sm-4">
+        <div class="infoBox hoverExpandEffect">
+            <div class="icon">
+                <span class="fa fa-dollar"></span>
+            </div>
+            <div class="content">
+                <div class="text">Calc Profit</div>
+                <div class="value"><span id="calcProfit">...</span></div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <!-- Javascript -->
 <script>
-function formatLuck(difficulty, shares) {
-    var percent = Math.round(shares / difficulty * 100);
-    if(!percent){
-        return '<span class="luckGood">?</span>';
-    }
-    else if(percent <= 100){
-        return '<span class="luckGood">' + percent + '%</span>';
-    }
-    else if(percent >= 101 && percent <= 150){
-        return '<span class="luckMid">' + percent + '%</span>';
-    }
-    else{
-        return '<span class="luckBad">' + percent + '%</span>';
-    }	
-}
-
-function getStats(promptPassword) {
-    var password = docCookies.getItem('password');
-
-    if(!password || promptPassword) {
-        password = prompt('Enter admin password');
-    }
-
-    $('#loading').show();
-    $.ajax({
-        url: api + '/admin_stats',
-        data: {password: password},
-	dataType: 'json',
-        cache: 'false',
-        success: function(data) {
-            docCookies.setItem('password', password, Infinity);
-            $('#loading').hide();
-            renderData(data);
-        },
-        error: function(e) {
-            docCookies.removeItem('password');
-            getStats(true);
+    function formatLuck(difficulty, shares) {
+        var percent = Math.round(shares / difficulty * 100);
+        if (!percent) {
+            return '<span class="luckGood">?</span>';
         }
+        else if (percent <= 100) {
+            return '<span class="luckGood">' + percent + '%</span>';
+        }
+        else if (percent >= 101 && percent <= 150) {
+            return '<span class="luckMid">' + percent + '%</span>';
+        }
+        else {
+            return '<span class="luckBad">' + percent + '%</span>';
+        }
+    }
+
+    function getStats(promptPassword) {
+        var password = docCookies.getItem('password');
+
+        if (!password || promptPassword) {
+            password = prompt('Enter admin password');
+        }
+
+        $('#loading').show();
+        $.ajax({
+            url: api + '/admin_stats',
+            data: { password: password },
+            dataType: 'json',
+            cache: 'false',
+            success: function (data) {
+                docCookies.setItem('password', password, Infinity);
+                $('#loading').hide();
+                renderData(data, password);
+            },
+            error: function (e) {
+                docCookies.removeItem('password');
+                getStats(true);
+            }
+        });
+    }
+
+    function renderData(data, password) {
+        $('#totalOwed').text(getReadableCoins(data.totalOwed));
+        $('#totalPaid').text(getReadableCoins(data.totalPaid));
+        $('#totalMined').text(getReadableCoins(data.totalRevenue + data.totalRevenueSolo));
+        $('#profit').text(getReadableCoins((data.totalRevenue + data.totalRevenueSolo) - data.totalOwed - data.totalPaid));
+        $('#blocksUnlocked').text(data.blocksUnlocked);
+        $('#averageLuck').html(formatLuck(data.totalDiff, data.totalShares));
+        $('#blocksOrphaned').text(data.blocksOrphaned);
+        $('#orphanPercent').text((data.blocksOrphaned / data.blocksUnlocked * 100).toFixed(2) + '%');
+        $('#registeredAddresses').text(data.totalWorkers);
+
+        $.ajax({
+            url: api + '/admin_monitoring',
+            data: { password: password },
+            dataType: 'json',
+            cache: false,
+            success: function (data) {
+                docCookies.setItem('password', password, Infinity);
+
+                var wallet = JSON.parse(data.monitoring.wallet.lastResponse);
+                var unlocked = wallet.unlocked_balance;
+
+                $.ajax({
+                    url: api + '/admin_users',
+                    data: { password: password },
+                    dataType: 'json',
+                    cache: false,
+                    success: function (data) {
+                        docCookies.setItem('password', password, Infinity);
+
+                        for (var wallet in data) {
+                            if (data.hasOwnProperty(wallet)) {
+                                var userData = data[wallet];
+                                unlocked -= userData.pending;
+                            }
+                        }
+
+                        $('#calcProfit').text(getReadableCoins(unlocked));
+                    },
+                    error: function (e) {
+                        docCookies.removeItem('password');
+                    }
+                });
+
+            },
+            error: function (e) {
+                docCookies.removeItem('password');
+            }
+        });
+
+    }
+
+    $(function () {
+        getStats();
     });
-}
-
-function renderData(data) {
-    $('#totalOwed').text(getReadableCoins(data.totalOwed));
-    $('#totalPaid').text(getReadableCoins(data.totalPaid));
-    $('#totalMined').text(getReadableCoins(data.totalRevenue));
-    $('#profit').text(getReadableCoins(data.totalRevenue - data.totalOwed - data.totalPaid));
-    $('#blocksUnlocked').text(data.blocksUnlocked);
-    $('#averageLuck').html(formatLuck(data.totalDiff, data.totalShares));
-    $('#blocksOrphaned').text(data.blocksOrphaned);
-    $('#orphanPercent').text((data.blocksOrphaned / data.blocksUnlocked * 100).toFixed(2) + '%');
-    $('#registeredAddresses').text(data.totalWorkers);
-}
-
-$(function() {
-    getStats();
-});
 </script>
