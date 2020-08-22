@@ -29,16 +29,6 @@
     "algo": "Cryptonight V7"
   },
 
-  "CZCO": {
-    "api": "https://letshash.it:8231/stats",
-    "url": "http://letshash.it/czco/",
-    "img": "crazycoin.png",
-    "name": "CRAZYCOIN",
-    "new": true,
-    "active": true,
-    "algo": "Cryptonight"
-  },
-
   "XLA": {
     "api": "https://letshash.it:8233/stats",
     "url": "http://letshash.it/xla/",
@@ -47,16 +37,6 @@
     "new": true,
     "active": true,
     "algo": "Panthera"
-  },
-
-  "CICO": {
-    "api": "https://letshash.it:8007/stats",
-    "url": "http://letshash.it/cico/",
-    "img": "cico.png",
-    "name": "COINICLES",
-    "new": false,
-    "active": true,
-    "algo": "RandomX/Loki"
   },
 
   "XFG": {
@@ -118,7 +98,17 @@
     "active": true,
     "algo": "Cryptonight-Fast"
   },
-
+  
+ "ETNX": {
+    "api": "https://letshash.it:8253/stats",
+    "url": "http://letshash.it/etnx/",
+    "img": "etnx.png",
+    "name": "ELECTRONERO",
+    "new": true,
+    "active": true,
+    "algo": "Cryptonight-Fast"
+  },
+  
   "LTNX": {
     "api": "https://letshash.it:8249/stats",
     "url": "http://letshash.it/ltnx/",
@@ -129,6 +119,16 @@
     "algo": "Cryptonight-Fast"
   },
 
+  "GLDX": {
+    "api": "https://letshash.it:8255/stats",
+    "url": "http://letshash.it/gldx/",
+    "img": "gldx.png",
+    "name": "GOLDNERO",
+    "new": true,
+    "active": true,
+    "algo": "Cryptonight-Fast"
+  },
+  
   "ET": {
     "api": "https://letshash.it:8220/stats",
     "url": "http://letshash.it/et/",
@@ -146,17 +146,7 @@
     "name": "KLARO",
     "new": false,
     "active": true,
-    "algo": "Randomx/Klaro"
-  },
-
-  "LOKI": {
-    "api": "https://letshash.it:8213/stats",
-    "url": "http://letshash.it/loki/",
-    "img": "loki.png",
-    "name": "LOKI",
-    "new": false,
-    "active": false,
-    "algo": "RandomX/Loki"
+    "algo": "Randomx/HFPI"
   },
 
   "NINJA": {
@@ -199,22 +189,13 @@
     "algo": "Cryptonight-Pico/trtl"
   },
 
-  "STCH": {
-    "api": "https://letshash.it:8003/stats",
-    "url": "http://letshash.it/stch/",
-    "img": "spitchcoin.png",
-    "name": "SPITCH",
-    "new": false,
-    "active": false
-  },
-
   "ETRX": {
     "api": "https://letshash.it:8224/stats",
     "url": "http://letshash.it/etrx/",
     "img": "etrx.png",
     "name": "traaittPlatform",
     "new": true,
-    "active": true,
+    "active": false,
     "algo": "Argon2d/Chukwa"
   },
 
@@ -225,6 +206,16 @@
     "name": "TESORO",
     "new": false,
     "active": true,
+    "algo": "RandomX"
+  },
+  
+   "XOL": {
+    "api": "https://letshash.it:8251/stats",
+    "url": "http://letshash.it/xol/",
+    "img": "xol.png",
+    "name": "XOLANTUM",
+    "new": true,
+    "active": false,
     "algo": "RandomX"
   },
 
