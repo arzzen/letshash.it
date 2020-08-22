@@ -189,7 +189,7 @@
     "algo": "Cryptonight-Pico/trtl"
   },
   
-  "SAU": {
+  "SPWN": {
     "api": "https://letshash.it:8257/stats",
     "url": "http://letshash.it/spwn/",
     "img": "spwn.png",
