@@ -186,7 +186,14 @@
                 docCookies.setItem('password', password, Infinity);
 
                 var wallet = JSON.parse(data.monitoring.wallet.lastResponse);
-                var unlocked = wallet.unlocked_balance;
+                var unlocked = 0;
+                if (wallet.unlocked_balance !== undefined) {
+                    unlocked = wallet.unlocked_balance;
+                }
+
+                if (wallet.availableBalance !== undefined) {
+                    unlocked = wallet.availableBalance;
+                }
 
                 $.ajax({
                     url: api + '/admin_users',

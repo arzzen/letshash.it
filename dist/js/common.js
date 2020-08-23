@@ -109,7 +109,6 @@ function routePage(loadedCallback) {
                     updateText('coinAlgo', coin.algo);
                     updateText('gs_coinAlgo', coin.algo);
 
-
                     $('#coinImage img').attr("src", "../assets/img/coins/" + coin.img);
                     if (coin.active) {
                         let dropdown = $('#coins, #mCoins');
