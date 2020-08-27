@@ -6,7 +6,9 @@
     "name": "CATALYST",
     "new": false,
     "active": true,
-    "algo": "Argon2d/Chukwa"
+    "algo": "Argon2d/Chukwa",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
 
   "TUBE": {
@@ -16,7 +18,9 @@
     "name": "BITTUBECASH",
     "new": true,
     "active": true,
-    "algo": "Cuckaroo29b"
+    "algo": "Cuckaroo29b",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
 
   "DTOR": {
@@ -26,7 +30,9 @@
     "name": "DTOR",
     "new": true,
     "active": true,
-    "algo": "Cryptonight V7"
+    "algo": "Cryptonight V7",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
 
   "XLA": {
@@ -36,7 +42,9 @@
     "name": "SCALA",
     "new": true,
     "active": true,
-    "algo": "Panthera"
+    "algo": "Panthera",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
 
   "XFG": {
@@ -46,7 +54,9 @@
     "name": "FANDOMGOLD",
     "new": true,
     "active": true,
-    "algo": "Cryptonight V8"
+    "algo": "Cryptonight V8",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
 
   "CIRQ": {
@@ -56,7 +66,9 @@
     "name": "CIRQUITY",
     "new": false,
     "active": true,
-    "algo": "Cryptonight-Pico/trtl"
+    "algo": "Cryptonight-Pico/trtl",
+    "unitPlaces": 2,
+    "addressPrefix": 3934293
   },
 
   "INZ": {
@@ -66,7 +78,9 @@
     "name": "IONIZE",
     "new": false,
     "active": true,
-    "algo": "Cryptonight-Pico/trtl"
+    "algo": "Cryptonight-Pico/trtl",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
 
   "KVA": {
@@ -76,7 +90,9 @@
     "name": "KEVACOIN",
     "new": true,
     "active": true,
-    "algo": "RandomX/Keva"
+    "algo": "RandomX/Keva",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
 
   "XEQ": {
@@ -86,7 +102,9 @@
     "name": "EQUILIBRIA",
     "new": false,
     "active": true,
-    "algo": "Cryptonight-GPU"
+    "algo": "Cryptonight-GPU",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
 
   "ETNXP": {
@@ -96,7 +114,9 @@
     "name": "ELECTRONERO PULSE",
     "new": true,
     "active": true,
-    "algo": "Cryptonight-Fast"
+    "algo": "Cryptonight-Fast",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
   
  "ETNX": {
@@ -106,7 +126,9 @@
     "name": "ELECTRONERO",
     "new": true,
     "active": true,
-    "algo": "Cryptonight-Fast"
+    "algo": "Cryptonight-Fast",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
   
   "LTNX": {
@@ -116,7 +138,9 @@
     "name": "LITENERO",
     "new": true,
     "active": true,
-    "algo": "Cryptonight-Fast"
+    "algo": "Cryptonight-Fast",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
 
   "GLDX": {
@@ -126,7 +150,9 @@
     "name": "GOLDNERO",
     "new": true,
     "active": true,
-    "algo": "Cryptonight-Fast"
+    "algo": "Cryptonight-Fast",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
   
   "ET": {
@@ -136,7 +162,9 @@
     "name": "ETCOIN",
     "new": true,
     "active": true,
-    "algo": "RandomX"
+    "algo": "RandomX",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
 
   "KLR": {
@@ -146,7 +174,9 @@
     "name": "KLARO",
     "new": false,
     "active": true,
-    "algo": "Randomx/HFPI"
+    "algo": "Randomx/HFPI",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
 
   "NINJA": {
@@ -156,7 +186,9 @@
     "name": "NINJACOIN",
     "new": false,
     "active": true,
-    "algo": "Argon2d/Ninja"
+    "algo": "Argon2d/Ninja",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
 
   "NBXC": {
@@ -166,7 +198,9 @@
     "name": "NIBBLE",
     "new": true,
     "active": true,
-    "algo": "Cryptonight-Conceal"
+    "algo": "Cryptonight-Conceal",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
 
   "NBR": {
@@ -176,7 +210,9 @@
     "name": "NIOBIO CASH",
     "new": false,
     "active": true,
-    "algo": "Cryptonight-Heavy"
+    "algo": "Cryptonight-Heavy",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
 
   "SAU": {
@@ -186,7 +222,9 @@
     "name": "SATORI",
     "new": true,
     "active": true,
-    "algo": "Cryptonight-Pico/trtl"
+    "algo": "Cryptonight-Pico/trtl",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
   
   "SPWN": {
@@ -196,7 +234,9 @@
     "name": "SPAWNCOIN",
     "new": true,
     "active": true,
-    "algo": "Cryptonight-Pico/trtl"
+    "algo": "Cryptonight-Pico/trtl",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
   
   "ETRX": {
@@ -206,7 +246,9 @@
     "name": "traaittPlatform",
     "new": true,
     "active": false,
-    "algo": "Argon2d/Chukwa"
+    "algo": "Argon2d/Chukwa",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
 
   "TSX": {
@@ -216,7 +258,9 @@
     "name": "TESORO",
     "new": false,
     "active": true,
-    "algo": "RandomX"
+    "algo": "RandomX",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
   
    "XOL": {
@@ -226,7 +270,9 @@
     "name": "XOLANTUM",
     "new": true,
     "active": false,
-    "algo": "RandomX"
+    "algo": "RandomX",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   },
 
   "XUNI": {
@@ -236,6 +282,8 @@
     "name": "ULTRANOTE INFINITY",
     "new": false,
     "active": true,
-    "algo": "Cryptonight-Conceal"
+    "algo": "Cryptonight-Conceal",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   }
 }
