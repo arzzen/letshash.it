@@ -7,8 +7,8 @@
     "new": false,
     "active": true,
     "algo": "Argon2d/Chukwa",
-    "unitPlaces": 0,
-    "addressPrefix": 0
+    "unitPlaces": 7,
+    "addressPrefix": 1515348
   },
 
   "TUBE": {
@@ -31,8 +31,8 @@
     "new": true,
     "active": true,
     "algo": "Cryptonight V7",
-    "unitPlaces": 0,
-    "addressPrefix": 0
+    "unitPlaces": 11,
+    "addressPrefix": 1179481
   },
 
   "XLA": {
@@ -43,8 +43,8 @@
     "new": true,
     "active": true,
     "algo": "Panthera",
-    "unitPlaces": 0,
-    "addressPrefix": 0
+    "unitPlaces": 2,
+    "addressPrefix": 155
   },
 
   "XFG": {
@@ -55,8 +55,8 @@
     "new": true,
     "active": true,
     "algo": "Cryptonight V8",
-    "unitPlaces": 0,
-    "addressPrefix": 0
+    "unitPlaces": 7,
+    "addressPrefix": 203478502
   },
 
   "CIRQ": {
@@ -79,8 +79,8 @@
     "new": false,
     "active": true,
     "algo": "Cryptonight-Pico/trtl",
-    "unitPlaces": 0,
-    "addressPrefix": 0
+    "unitPlaces": 8,
+    "addressPrefix": 31097
   },
 
   "KVA": {
@@ -103,8 +103,8 @@
     "new": false,
     "active": true,
     "algo": "Cryptonight-GPU",
-    "unitPlaces": 0,
-    "addressPrefix": 0
+    "unitPlaces": 4,
+    "addressPrefix": 289
   },
 
   "ETNXP": {
@@ -115,8 +115,8 @@
     "new": true,
     "active": true,
     "algo": "Cryptonight-Fast",
-    "unitPlaces": 0,
-    "addressPrefix": 0
+    "unitPlaces": 6,
+    "addressPrefix": 18018
   },
   
  "ETNX": {
@@ -127,8 +127,8 @@
     "new": true,
     "active": true,
     "algo": "Cryptonight-Fast",
-    "unitPlaces": 0,
-    "addressPrefix": 0
+    "unitPlaces": 8,
+    "addressPrefix": 18018
   },
   
   "LTNX": {
@@ -139,8 +139,8 @@
     "new": true,
     "active": true,
     "algo": "Cryptonight-Fast",
-    "unitPlaces": 0,
-    "addressPrefix": 0
+    "unitPlaces": 8,
+    "addressPrefix": 18018
   },
 
   "GLDX": {
@@ -151,8 +151,8 @@
     "new": true,
     "active": true,
     "algo": "Cryptonight-Fast",
-    "unitPlaces": 0,
-    "addressPrefix": 0
+    "unitPlaces": 12,
+    "addressPrefix": 18018
   },
   
   "ET": {
@@ -175,8 +175,8 @@
     "new": false,
     "active": true,
     "algo": "Randomx/HFPI",
-    "unitPlaces": 0,
-    "addressPrefix": 0
+    "unitPlaces": 12,
+    "addressPrefix": 214
   },
 
   "NINJA": {
@@ -187,8 +187,8 @@
     "new": false,
     "active": true,
     "algo": "Argon2d/Ninja",
-    "unitPlaces": 0,
-    "addressPrefix": 0
+    "unitPlaces": 2,
+    "addressPrefix": 10115542401
   },
 
   "NBXC": {
@@ -199,8 +199,8 @@
     "new": true,
     "active": true,
     "algo": "Cryptonight-Conceal",
-    "unitPlaces": 0,
-    "addressPrefix": 0
+    "unitPlaces": 6,
+    "addressPrefix": 17588
   },
 
   "NBR": {
@@ -209,7 +209,7 @@
     "img": "niobio.png",
     "name": "NIOBIO CASH",
     "new": false,
-    "active": true,
+    "active": false,
     "algo": "Cryptonight-Heavy",
     "unitPlaces": 0,
     "addressPrefix": 0
@@ -223,8 +223,8 @@
     "new": true,
     "active": true,
     "algo": "Cryptonight-Pico/trtl",
-    "unitPlaces": 0,
-    "addressPrefix": 0
+    "unitPlaces": 9,
+    "addressPrefix": 830774
   },
   
   "SPWN": {
@@ -235,8 +235,8 @@
     "new": true,
     "active": true,
     "algo": "Cryptonight-Pico/trtl",
-    "unitPlaces": 0,
-    "addressPrefix": 0
+    "unitPlaces": 8,
+    "addressPrefix": 25751
   },
   
   "ETRX": {
@@ -257,7 +257,7 @@
     "img": "tesoro.png",
     "name": "TESORO",
     "new": false,
-    "active": true,
+    "active": false,
     "algo": "RandomX",
     "unitPlaces": 0,
     "addressPrefix": 0
@@ -271,8 +271,8 @@
     "new": true,
     "active": false,
     "algo": "RandomX",
-    "unitPlaces": 0,
-    "addressPrefix": 0
+    "unitPlaces": 12,
+    "addressPrefix": 185
   },
 
   "XUNI": {
