@@ -274,6 +274,18 @@
     "unitPlaces": 12,
     "addressPrefix": 185
   },
+   
+   "PIRA": {
+    "api": "https://letshash.it:8259/stats",
+    "url": "http://letshash.it/pira/",
+    "img": "pira.png",
+    "name": "PIRANHA",
+    "new": true,
+    "active": true,
+    "algo": "Argon2/Chukwa",
+    "unitPlaces": 8,
+    "addressPrefix": 27655
+  },
 
   "XUNI": {
     "api": "https://letshash.it:8210/stats",
@@ -283,7 +295,7 @@
     "new": false,
     "active": true,
     "algo": "Cryptonight-Conceal",
-    "unitPlaces": 0,
-    "addressPrefix": 0
+    "unitPlaces": 6,
+    "addressPrefix": 3008056
   }
 }
