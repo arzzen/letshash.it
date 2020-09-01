@@ -1,4 +1,4 @@
-var blocks = '<div id="{symbolName}" class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 coin">' +
+var blocks = '<div id="{symbolName}" data-unitPlaces="{unitPlaces}" data-addressPrefix="{addressPrefix}" class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 coin">' +
     '<div class="box">' +
     ' <div class="ribbon-wrapper d-none">  <div class="ribbon red">New</div> </div>' +
     '<div class="icon" style="background: #e1eeff;">' +
@@ -31,10 +31,14 @@ var blocks = '<div id="{symbolName}" class="col-12 col-sm-12 col-md-6 col-lg-6 c
     '<br>' +
     '<p class="description text-center">' +
     '<a target="_blank" class="btn btn-primary" href="{url}">start mining now!</a>' +
+    '<a href="javascript:void(0);" class="btn btn-info genwallet ml-2 {hidden}" data-target=".bd-example-modal-lg" data-toggle="tooltip" title="Wallet generator"><svg width="1.4em" height="1.4em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">' +
+    '<path fill-rule="evenodd" d = "M3.5 5a.5.5 0 00-.5.5v2h5a.5.5 0 01.5.5c0 .253.08.644.306.958.207.288.557.542 1.194.542.637 0 .987-.254 1.194-.542.226-.314.306-.705.306-.958a.5.5 0 01.5-.5h5v-2a.5.5 0 00-.5-.5h-13zM17 8.5h-4.551a2.678 2.678 0 01-.443 1.042c-.393.546-1.043.958-2.006.958-.963 0-1.613-.412-2.006-.958A2.679 2.679 0 017.551 8.5H3v6a.5.5 0 00.5.5h13a.5.5 0 00.5-.5v-6zm-15-3A1.5 1.5 0 013.5 4h13A1.5 1.5 0 0118 5.5v9a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 012 14.5v-9z" clip - rule="evenodd" ></path>' +
+    '</svg></a>' +
     '</p>' +
     '</div>' +
     '</div>'
     ;
+
 
 function timeSince(date) {
     var seconds = Math.floor((new Date() - date) / 1000);
@@ -160,6 +164,8 @@ function process(data, pools) {
 
     var b = blocks
         .replace(/{url}/g, coin.url)
+        .replace(/{addressPrefix}/g, coin.addressPrefix)
+        .replace(/{unitPlaces}/g, coin.unitPlaces)
         .replace(/{symbolName}/g, symbol)
         .replace(/{name}/g, coin.name.toUpperCase())
         .replace(/{imageName}/g, coin.img)
@@ -173,6 +179,7 @@ function process(data, pools) {
         .replace(/{soloHashRate}/g, getReadableHashRateString(data.pool.hashrateSolo) + '/sec')
         .replace(/{lastBlockFound}/g, lastBlockFound)
         .replace(/{sparkline}/g, home_GetGraphData(data.charts.difficulty).values)
+        .replace(/{hidden}/g, coin.addressPrefix > 0 ? '' : 'd-none')
         ;
     totalMiners += data.pool.miners;
     totalWorkers += data.pool.workers;

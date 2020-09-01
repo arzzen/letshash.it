@@ -110,11 +110,11 @@
         </header>
 
         <div class="owl-carousel clients-carousel">
-         
+
           <a href="https://www.ultranote.org/" target="_blank">
             <img src="assets/img/clients/ultranote.png" alt="">
           </a>
-          
+
         </div>
 
       </div>
@@ -432,6 +432,72 @@
         </div>
       </div>
 
+      <div style="z-index:1046" class="modal fade" id="modalQrCode" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body text-center">
+              <h5 class="modal-title" id="modalTitle"></h5>
+              <div id="qrcode" class="text-center align-middle m-t-10"></div>
+              <br>
+              <button type="button" class="btn btn-secondary m-t-10" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="z-index:1045" class="modal fade bd-example-modal-lg" id="walletmodal" tabindex="-1" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <table class="table table-borderless table-responsive">
+                <tr class="">
+                  <td colspan="2" class="">
+                    <div class="shadow p-3 mb-1 bg-white rounded">
+                      <strong>Public address</strong> <a href="javascript:void(0)" data-clipboard-target=".address"
+                        class="small btn-copy">copy</a><br>
+                      <code class="address"></code>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="mt-3">
+                  <td>
+                    Mnemonic seed <a href="javascript:void(0)" data-clipboard-target=".mnemoric"
+                      class="small btn-copy">copy</a></br>
+                    <code class="mnemoric"></code>
+                  </td>
+                </tr>
+                <tr class="">
+                  <td>
+                    Spend key <a href="javascript:void(0)" data-clipboard-target=".spendkey"
+                      class="btn-copy small ">copy</a><br>
+                    <code class="spendkey"></code>
+                  </td>
+                </tr>
+                <tr class="">
+                  <td>
+                    View key <a href="javascript:void(0)" data-clipboard-target=".viewkey"
+                      class="small btn-copy">copy</a><br>
+                    <code class="viewkey"></code>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-save" data-target=".address">Save to file</button>
+              <button type="button" class="btn btn-qr-code" data-target=".address">QR code</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="container">
         <div class="copyright">
           2019-2020 | &copy; Copyright <strong>letshash.it</strong>. | All Rights Reserved.
@@ -446,10 +512,17 @@
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/clipboard/dist/clipboard.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
+    <script src="assets/vendor/file-saver/FileSaver.min.js"></script>
+    <script src="assets/js/qrcode.min.js"></script>
+    <script src="assets/js/mnemonics.js"></script>
+    <script src="assets/js/libraries.js"></script>
+    <script src="assets/js/wallet.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/ago.js"></script>
     <script src="assets/js/app.js"></script>
+
 
 </body>
 
