@@ -91,13 +91,16 @@ $('body').on('click', '.genwallet', function () {
         });
     }
     $('#qrcode').find('img').addClass('d-block mx-auto');
-    $('.btn-qr-code:not(.bound)').addClass('bound').on('click', function () {
+    $('.btn-qr-code').click(function () {
         var target = $(this).data('target');
         initQrCode(target);
     });
 
-    $('.btn-save:not(.bound)').addClass('bound').on('click', function () {
+    $('.btn-save').show();
+    $('.btn-save').click(function () {
         saveFile(title, wallet);
+        $(this).hide();
+        $(this).off('click');
     });
 
     modal.find('.modal-title').text(title);
