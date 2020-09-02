@@ -91,12 +91,12 @@ $('body').on('click', '.genwallet', function () {
         });
     }
     $('#qrcode').find('img').addClass('d-block mx-auto');
-    $('.btn-qr-code').on('click', function () {
+    $('.btn-qr-code:not(.bound)').addClass('bound').on('click', function () {
         var target = $(this).data('target');
         initQrCode(target);
     });
 
-    $('.btn-save').on('click', function () {
+    $('.btn-save:not(.bound)').addClass('bound').on('click', function () {
         saveFile(title, wallet);
     });
 
@@ -107,4 +107,4 @@ $('body').on('click', '.genwallet', function () {
     modal.find('.modal-body').find('.viewkey').text(wallet.view_key);
 
     modal.modal();
-})
+});
