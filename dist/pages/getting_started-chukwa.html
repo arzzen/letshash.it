@@ -79,61 +79,73 @@
 
 				<!-- Configuration Generator -->
 				<div class=" padding-15">
-					<p><span data-tkey="configGeneratorDesc">Generate your custom configuration to mine on our
-							pool</span></p>
-					<div id="configGenerator" class="row">
-						<div class="col-sm-3 col-xs-8">
-							<div class="input-group push-down-5">
-								<span class="input-group-addon"><i class="fa fa-link"></i></span>
-								<select class="form-select selectized" id="gMiningPort"></select>
-							</div>
-						</div>
-						<div class="col-sm-3 col-xs-4">
-							<div class="input-group push-down-5">
-								<span style="white-space: nowrap;">Solo Mining
-									<label><input type="checkbox" name="solo" id="gSolo" value="1"
-											title="Check if want to mine both pools solo"></label>
-								</span>
-							</div>
-						</div>
-						<br>
-						<div class="col-sm-6 col-xs-12">
-							<div class="input-group push-down-5">
-								<span class="input-group-addon"><i class="fa fa-key"></i></span>
-								<input class="form-control" id="gAddress" type="text" data-tplaceholder="addressField"
-									placeholder="Wallet Address" required="required" />
-							</div>
-						</div>
-						<div class="col-sm-6 col-xs-12">
-							<div class="input-group push-down-5">
-								<span class="input-group-addon"><i class="fa fa-exchange"></i></span>
-								<input class="form-control" id="gPaymentID" type="text"
-									data-tplaceholder="paymentIdField"
-									placeholder="Payment ID for exchanges (optional)" />
-							</div>
-						</div>
-						<div class="col-sm-6 col-xs-12">
-							<div class="input-group push-down-5">
-								<span class="input-group-addon"><i class="fa fa-key"></i></span>
-								<input class="form-control" id="gChildAddress" type="text"
-									data-tplaceholder="childAddressField" placeholder="Worker name"
-									required="required" />
-							</div>
-						</div>
-						<div class="col-sm-6 col-xs-12">
-							<div class="input-group push-down-5">
-								<span class="input-group-addon"><i class="fa fa-wrench"></i></span>
-								<input class="form-control" id="gDifficulty" type="text"
-									data-tplaceholder="fixedDiffField" placeholder="Fixed difficulty (optional)" />
-							</div>
-						</div>
-						<div class="col-md-12 text-center mt-1">
-							<input id="generateConf" type="submit" tvalue="generateConfig"
-								value="Generate configuration" class="btn btn-primary" data-toggle="collapse"
-								href="#xmrstak" />
+				<p><span data-tkey="configGeneratorDesc">Generate your custom configuration to mine on our
+						pool</span></p>
+				<div id="configGenerator" class="row">
+					<div class="col-sm-3 col-xs-8">
+						<div class="input-group push-down-5">
+							<span class="input-group-addon"><i class="fa fa-link"></i></span>
+							<select class="form-select selectized" id="gMiningPort"></select>
 						</div>
 					</div>
+					<div class="col-sm-3 col-xs-4">
+						<div class="input-group push-down-5">
+							<span style="white-space: nowrap;">Solo Mining
+								<label><input type="checkbox" name="solo" id="gSolo" value="1"
+										title="Check if want to mine both pools solo"></label>
+							</span>
+						</div>
+					</div>
+					<br>
+					<div class="col-sm-6 col-xs-12">
+						<div class="input-group push-down-5">
+							<span class="input-group-addon"><i class="fa fa-server"></i></span>
+							<input class="form-control" id="gWorkerName" data-tplaceholder="workerNameField" type="text"
+								placeholder="Worker_Name" />
+						</div>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<div class="input-group push-down-5">
+							<span class="input-group-addon"><i class="fa fa-key"></i></span>
+							<input class="form-control" id="gAddress" type="text" data-tplaceholder="addressField"
+								placeholder="Wallet Address" required="required" />
+						</div>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<div class="input-group push-down-5">
+							<span class="input-group-addon"><i class="fa fa-exchange"></i></span>
+							<input class="form-control" id="gPaymentID" type="text" data-tplaceholder="paymentIdField"
+								placeholder="Parent Payment ID for exchanges (optional)" />
+						</div>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<div class="input-group push-down-5">
+							<span class="input-group-addon"><i class="fa fa-key"></i></span>
+							<input class="form-control" id="gChildAddress" type="text"
+								data-tplaceholder="childAddressField" placeholder="Child Address" required="required" />
+						</div>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<div class="input-group push-down-5">
+							<span class="input-group-addon"><i class="fa fa-exchange"></i></span>
+							<input class="form-control" id="gChildPaymentID" type="text"
+								data-tplaceholder="childPaymentIdField"
+								placeholder="Child Payment ID for exchanges (optional)" />
+						</div>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<div class="input-group push-down-5">
+							<span class="input-group-addon"><i class="fa fa-wrench"></i></span>
+							<input class="form-control" id="gDifficulty" type="text" data-tplaceholder="fixedDiffField"
+								placeholder="Fixed difficulty (optional)" />
+						</div>
+					</div>
+					<div class="col-md-12 text-center mt-1">
+						<input id="generateConf" type="submit" tvalue="generateConfig" value="Generate configuration"
+							class="btn btn-primary" data-toggle="collapse" href="#xmrstak" />
+					</div>
 				</div>
+			</div>
 
 				<!-- Mining Applications -->
 				<div class="push-up-5 mt-4">
