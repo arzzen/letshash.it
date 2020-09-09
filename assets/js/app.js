@@ -139,7 +139,7 @@ function toFixed(x) {
 let totalMiners = totalWorkers = 0;
 function fetchStats() {
     //$('.coin').remove();
-    $.getJSON('pools.json', function (data) {
+    $.getJSON('pools.json?v=20200909', function (data) {
 
         //var poolsSec = $.getJSON('http://letshash.online/api/stats', function (data) {
         //    console.log(data);
