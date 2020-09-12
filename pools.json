@@ -106,8 +106,8 @@
     "unitPlaces": 6,
     "addressPrefix": 18018
   },
-  
- "ETNX": {
+
+  "ETNX": {
     "api": "https://letshash.it:8253/stats",
     "url": "http://letshash.it/etnx/",
     "img": "etnx.png",
@@ -118,7 +118,7 @@
     "unitPlaces": 8,
     "addressPrefix": 18018
   },
-  
+
   "LTNX": {
     "api": "https://letshash.it:8249/stats",
     "url": "http://letshash.it/ltnx/",
@@ -142,7 +142,7 @@
     "unitPlaces": 12,
     "addressPrefix": 18018
   },
-  
+
   "ET": {
     "api": "https://letshash.it:8220/stats",
     "url": "http://letshash.it/et/",
@@ -214,7 +214,7 @@
     "unitPlaces": 9,
     "addressPrefix": 830774
   },
-  
+
   "SPWN": {
     "api": "https://letshash.it:8257/stats",
     "url": "http://letshash.it/spwn/",
@@ -226,7 +226,7 @@
     "unitPlaces": 8,
     "addressPrefix": 25751
   },
-  
+
   "ETRX": {
     "api": "https://letshash.it:8224/stats",
     "url": "http://letshash.it/etrx/",
@@ -250,8 +250,8 @@
     "unitPlaces": 0,
     "addressPrefix": 0
   },
-  
-   "XOL": {
+
+  "XOL": {
     "api": "https://letshash.it:8251/stats",
     "url": "http://letshash.it/xol/",
     "img": "xol.png",
@@ -262,8 +262,8 @@
     "unitPlaces": 12,
     "addressPrefix": 185
   },
-   
-   "PIRA": {
+
+  "PIRA": {
     "api": "https://letshash.it:8259/stats",
     "url": "http://letshash.it/pira/",
     "img": "pira.png",
@@ -285,5 +285,61 @@
     "algo": "Cryptonight-Conceal",
     "unitPlaces": 6,
     "addressPrefix": 3008056
+  },
+
+  "ALTEX": {
+    "api": false,
+    "url": "http://letshash.online/",
+    "img": "altex.png",
+    "name": "altex",
+    "new": false,
+    "active": true,
+    "algo": "x11",
+    "unitPlaces": 0,
+    "addressPrefix": 0
+  },
+  "BRWN": {
+    "api": false,
+    "url": "http://letshash.online/",
+    "img": "browncoin.png",
+    "name": "browncoin",
+    "new": false,
+    "active": true,
+    "algo": "scrypt",
+    "unitPlaces": 0,
+    "addressPrefix": 0
+  },
+  "GOLD": {
+    "api": false,
+    "url": "http://letshash.online/",
+    "img": "gold.png",
+    "name": "goldcash",
+    "new": false,
+    "active": true,
+    "algo": "yescryptR16",
+    "unitPlaces": 0,
+    "addressPrefix": 0
+  },
+  "LTN": {
+    "api": false,
+    "url": "http://letshash.online/",
+    "img": "ltn.png",
+    "name": "lightningcash",
+    "new": false,
+    "active": true,
+    "algo": "yespowerLTNCG",
+    "unitPlaces": 0,
+    "addressPrefix": 0
+  },
+  "ROC": {
+    "api": false,
+    "url": "http://letshash.online/",
+    "img": "roc.png",
+    "name": "rosecoin",
+    "new": false,
+    "active": true,
+    "algo": "scrypt",
+    "unitPlaces": 0,
+    "addressPrefix": 0
   }
 }

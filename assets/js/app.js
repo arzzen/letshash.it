@@ -140,12 +140,42 @@ let totalMiners = totalWorkers = 0;
 function fetchStats() {
     //$('.coin').remove();
     $.getJSON('pools.json?v=20200909', function (data) {
-
-        //var poolsSec = $.getJSON('http://letshash.online/api/stats', function (data) {
-        //    console.log(data);
-        //});
-
         var pools = data;
+
+        var poolsSec = $.getJSON('letshash.online.json', function (data) {
+            for (var key in data.pools) {
+                if (data.pools.hasOwnProperty(key) && pools[data.pools[key].symbol] !== undefined && pools[data.pools[key].symbol].active) {
+                    var opool = pools[data.pools[key].symbol];
+                    var fakedata = {
+                        config: {
+                            symbol: data.pools[key].symbol,
+                            cnAlgorithm: data.pools[key].algorithm,
+                            coinDifficultyTarget: data.pools[key].networkDiff,
+                            fee: 0
+                        },
+                        pool: {
+                            lastBlockFound: '',
+                            hashrateString: data.pools[key].hashrateString,
+                            miners: data.pools[key].minerCount,
+                            workers: data.pools[key].workerCount,
+                            minersSolo: 0,
+                            workersSolo: 0,
+                            hashrateSolo: 0,
+                            blockSolvedTime: '-'
+                        },
+                        network: {
+                            difficultyString: data.pools[key].poolStats.networkSolsString
+                        },
+                        charts: {
+                            difficulty: {}
+                        }
+                    };
+                    process(fakedata, pools);
+
+                }
+            }
+        });
+
         for (var key in pools) {
             if (pools.hasOwnProperty(key) && pools[key].active) {
                 $.getJSON(pools[key].api, function (data) {
@@ -161,7 +191,7 @@ function process(data, pools) {
     var symbol = data.config.symbol;
     var coin = pools[symbol];
 
-    var lastBlockFound = 'never'
+    var lastBlockFound = '-'
     if (data.pool.lastBlockFound) {
         var d = new Date(parseInt(data.pool.lastBlockFound)).toISOString();
         lastBlockFound = $.timeago(d);
@@ -175,12 +205,12 @@ function process(data, pools) {
         .replace(/{name}/g, coin.name.toUpperCase())
         .replace(/{imageName}/g, coin.img)
         .replace(/{algo}/g, coin.algo || data.config.cnAlgorithm)
-        .replace(/{lastBlock}/g, getReadableHashRateString(data.network.difficulty / data.config.coinDifficultyTarget) + "/sec")
+        .replace(/{lastBlock}/g, data.network.difficulty ? getReadableHashRateString(data.network.difficulty / data.config.coinDifficultyTarget) + "/sec" : data.network.difficultyString)
         .replace(/{fee}/g, data.config.fee)
-        .replace(/{blockSolvedTime}/g, getReadableTime(data.network.difficulty / data.pool.hashrate))
+        .replace(/{blockSolvedTime}/g, data.pool.blockSolvedTime ? data.pool.blockSolvedTime : getReadableTime(data.network.difficulty / data.pool.hashrate))
         .replace(/{miners}/g, data.pool.miners + ' (' + data.pool.workers + ' workers)')
         .replace(/{soloMiners}/g, (typeof data.pool.minersSolo !== "undefined" ? data.pool.minersSolo + ' (' + data.pool.workersSolo + ' workers)' : 'n/a (n/a workers)'))
-        .replace(/{propHashRate}/g, getReadableHashRateString(data.pool.hashrate) + '/sec')
+        .replace(/{propHashRate}/g, data.pool.hashrate ? getReadableHashRateString(data.pool.hashrate) + '/sec' : data.pool.hashrateString)
         .replace(/{soloHashRate}/g, getReadableHashRateString(data.pool.hashrateSolo) + '/sec')
         .replace(/{lastBlockFound}/g, lastBlockFound)
         .replace(/{sparkline}/g, home_GetGraphData(data.charts.difficulty).values)
