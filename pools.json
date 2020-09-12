@@ -58,7 +58,19 @@
     "unitPlaces": 2,
     "addressPrefix": 3934293
   },
-
+  
+  "XCHZ": {
+    "api": "https://letshash.it:8267/stats",
+    "url": "http://letshash.it/xchz/",
+    "img": "xchz.png",
+    "name": "CHAINSAUR",
+    "new": true,
+    "active": true,
+    "algo": "Cryptonight",
+    "unitPlaces": 2,
+    "addressPrefix": 2212532
+  },
+  
   "INZ": {
     "api": "https://letshash.it:8051/stats",
     "url": "http://letshash.it/inz/",
