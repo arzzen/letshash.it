@@ -216,8 +216,15 @@ function process(data, pools) {
         .replace(/{sparkline}/g, home_GetGraphData(data.charts.difficulty).values)
         .replace(/{hidden}/g, coin.addressPrefix > 0 ? '' : 'd-none')
         ;
+
     totalMiners += data.pool.miners;
     totalWorkers += data.pool.workers;
+    if (typeof data.pool.minersSolo !== "undefined") {
+        totalMiners += data.pool.minersSolo;
+        totalWorkers += data.pool.workersSolo;
+    }
+
+
     $('#totalMiners').html(totalMiners);
     $('#totalWorkers').html(totalWorkers);
 
