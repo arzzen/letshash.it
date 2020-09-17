@@ -71,16 +71,16 @@
     "addressPrefix": 3226286
   },
   
-  "INZ": {
-    "api": "https://letshash.it:8051/stats",
-    "url": "http://letshash.it/inz/",
-    "img": "ionize.png",
-    "name": "IONIZE",
-    "new": false,
-    "active": false,
-    "algo": "Cryptonight-Pico/trtl",
-    "unitPlaces": 8,
-    "addressPrefix": 31097
+  "CRFI": {
+    "api": "https://letshash.it:8270/stats",
+    "url": "http://letshash.it/crfi/",
+    "img": "crfi.png",
+    "name": "CRYSTALEUM",
+    "new": true,
+    "active": true,
+    "algo": "Cryptonight-Fast",
+    "unitPlaces": 12,
+    "addressPrefix": 343
   },
 
   "KVA": {
