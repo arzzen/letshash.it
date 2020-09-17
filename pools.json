@@ -59,16 +59,16 @@
     "addressPrefix": 3934293
   },
   
-  "XCHZ": {
+  "WGLD": {
     "api": "https://letshash.it:8267/stats",
-    "url": "http://letshash.it/xchz/",
-    "img": "xchz.png",
-    "name": "CHAINSAUR",
+    "url": "http://letshash.it/wgld/",
+    "img": "wgld.png",
+    "name": "GOLDENCOIN",
     "new": true,
     "active": true,
     "algo": "Cryptonight",
     "unitPlaces": 2,
-    "addressPrefix": 2212532
+    "addressPrefix": 3226286
   },
   
   "INZ": {
