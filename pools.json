@@ -10,6 +10,17 @@
     "unitPlaces": 7,
     "addressPrefix": 1515348
   },
+  "CPA": {
+    "api": "https://letshash.it:8273/stats",
+    "url": "http://letshash.it/cpa/",
+    "img": "cpa.png",
+    "name": "CRYPTOPAYAFRICA",
+    "new": true,
+    "active": true,
+    "algo": "Argon2d/Chukwa",
+    "unitPlaces": 6,
+    "addressPrefix": 5078
+  },
 
   "DTOR": {
     "api": "https://letshash.it:8238/stats",
