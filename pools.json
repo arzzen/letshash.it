@@ -10,6 +10,7 @@
     "unitPlaces": 7,
     "addressPrefix": 1515348
   },
+  
   "CPA": {
     "api": "https://letshash.it:8273/stats",
     "url": "http://letshash.it/cpa/",
@@ -21,7 +22,19 @@
     "unitPlaces": 6,
     "addressPrefix": 5078
   },
-
+  
+ "CXCHE": {
+    "api": "https://letshash.it:8275/stats",
+    "url": "http://letshash.it/cxche/",
+    "img": "cxche.png",
+    "name": "CACHE",
+    "new": true,
+    "active": false,
+    "algo": "Cryptonight-Cache",
+    "unitPlaces": 5,
+    "addressPrefix": 43810262
+  },
+  
   "DTOR": {
     "api": "https://letshash.it:8238/stats",
     "url": "http://letshash.it/dtor/",
