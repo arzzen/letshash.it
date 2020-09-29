@@ -23,6 +23,18 @@
     "addressPrefix": 5078
   },
   
+  "RS": {
+    "api": "https://letshash.it:8277/stats",
+    "url": "http://letshash.it/rs/",
+    "img": "rs.png",
+    "name": "REDSTONE",
+    "new": true,
+    "active": true,
+    "algo": "Argon2d/Chukwa",
+    "unitPlaces": 6,
+    "addressPrefix": 149
+  },
+  
  "CXCHE": {
     "api": "https://letshash.it:8275/stats",
     "url": "http://letshash.it/cxche/",
