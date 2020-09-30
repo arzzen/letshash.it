@@ -46,6 +46,30 @@
     "unitPlaces": 5,
     "addressPrefix": 43810262
   },
+
+  "XKR": {
+    "api": "https://letshash.it:8279/stats",
+    "url": "http://letshash.it/xkr/",
+    "img": "xkr.png",
+    "name": "KRYPTOKRONA",
+    "new": true,
+    "active": true,
+    "algo": "Cryptonight-Pico/trtl",
+    "unitPlaces": 4,
+    "addressPrefix": 2239254
+  },
+  
+  "GNS": {
+    "api": "https://letshash.it:8281/stats",
+    "url": "http://letshash.it/gns/",
+    "img": "gns.png",
+    "name": "GOODNESSCOIN",
+    "new": true,
+    "active": true,
+    "algo": "Cryptonight-Light V1",
+    "unitPlaces": 8,
+    "addressPrefix": 29421
+  },
   
   "DTOR": {
     "api": "https://letshash.it:8238/stats",
