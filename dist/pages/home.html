@@ -2,7 +2,7 @@
 
     <div class="col-sm-6 col-lg-3">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" style="overflow: hidden;">
                 <div class="d-flex align-items-center">
                     <div class="subheader"><span tkey="hashRate">Hash Rate</span></div>
                 </div>
@@ -18,7 +18,7 @@
 
     <div class="col-sm-6 col-lg-3">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" style="overflow: hidden;">
                 <div class="d-flex align-items-center">
                     <div class="subheader"><span tkey="difficulty">Difficulty</span></div>
                 </div>
@@ -34,7 +34,7 @@
 
     <div class="col-sm-6 col-lg-3">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" style="overflow: hidden;">
                 <div class="d-flex align-items-center">
                     <div class="subheader"><span tkey="miners">Miners</span></div>
                 </div>
@@ -50,7 +50,7 @@
 
     <div class="col-sm-6 col-lg-3">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" style="overflow: hidden;">
                 <div class="d-flex align-items-center">
                     <div class="subheader"><span tkey="workers">Workers</span></div>
                 </div>
@@ -426,7 +426,7 @@
                 cx.style.height = '100px';
 
                 var chartObj = new Chart(cx, {
-                    type: 'line',
+                    type: 'bar',
                     data: {
                         labels: graphData[graphType].names,
                         datasets: [{
@@ -435,7 +435,7 @@
                             fill: false,
                             backgroundColor: bgcolor,
                             borderColor: bordercolor,
-                            borderWidth: 2,
+                            borderWidth: 5,
                         }]
                     },
                     options: {
