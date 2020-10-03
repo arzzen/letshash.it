@@ -1,4 +1,4 @@
-<div id="blocksStats" class="row row-deck row-cards ">
+<div id="blocksStats" class="row row-deck row-cards d-none">
 
     <div class="col-sm-6 col-lg-3">
         <div class="card">
@@ -308,10 +308,10 @@
     currentPage = {
         destroy: function () {
             $('#networkLastBlockFound,#poolLastBlockFound').timeago('dispose');
-            if (chartsInitialized) {
-                chartsInitialized = false;
-                clearInterval(intervalChartsUpdate);
-            }
+            //if (chartsInitialized) {
+            //    chartsInitialized = false;
+            //    clearInterval(intervalChartsUpdate);
+            //}
         },
         update: function () {
             $('#networkLastBlockFound').timeago('update', new Date(lastStats.lastblock.timestamp * 1000).toISOString());
@@ -381,8 +381,8 @@
 
             if (lastStats.charts && !chartsInitialized) {
                 //intervalChartsUpdate = setInterval(createCharts, 60 * 1000);
-                createCharts();
-                chartsInitialized = true;
+                //createCharts();
+                //chartsInitialized = true;
             }
         }
     };
