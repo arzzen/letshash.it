@@ -1,4 +1,4 @@
-<div id="blocksStats" class="row row-deck row-cards">
+<div id="blocksStats" class="row row-deck row-cards d-none">
 
     <div class="col-sm-6 col-lg-3">
         <div class="card">
@@ -309,7 +309,7 @@
         destroy: function () {
             $('#networkLastBlockFound,#poolLastBlockFound').timeago('dispose');
             if (chartsInitialized) {
-                chartsInitialized = false;
+                //chartsInitialized = false;
                 //clearInterval(intervalChartsUpdate);
             }
         },
@@ -381,7 +381,7 @@
 
             if (lastStats.charts && !chartsInitialized) {
                 //intervalChartsUpdate = setInterval(createCharts, 60 * 1000);
-                createCharts();
+                //createCharts();
                 //chartsInitialized = true;
             }
         }
