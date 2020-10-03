@@ -1,4 +1,4 @@
-<div id="blocksStats" class="row row-deck row-cards">
+<div id="blocksStats" class="row row-deck row-cards ">
 
     <div class="col-sm-6 col-lg-3">
         <div class="card">
@@ -380,7 +380,7 @@
             updateText('currentEffort', (lastStats.pool.roundHashes / lastStats.network.difficulty * 100).toFixed(1) + '%');
 
             if (lastStats.charts && !chartsInitialized) {
-                intervalChartsUpdate = setInterval(createCharts, 60 * 1000);
+                //intervalChartsUpdate = setInterval(createCharts, 60 * 1000);
                 createCharts();
                 chartsInitialized = true;
             }
@@ -426,7 +426,7 @@
                 cx.style.height = '100px';
 
                 var chartObj = new Chart(cx, {
-                    type: 'bar',
+                    type: 'line',
                     data: {
                         labels: graphData[graphType].names,
                         datasets: [{
