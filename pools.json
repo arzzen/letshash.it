@@ -392,7 +392,7 @@
     "unitPlaces": 0,
     "addressPrefix": 0
   },
-    "FIVEG": {
+  "FIVEG": {
     "api": false,
     "url": "http://letshash.online/",
     "img": "5g.png",
@@ -403,9 +403,9 @@
     "unitPlaces": 0,
     "addressPrefix": 0
   },
-   "SPACE": {
+  "SPACE": {
     "api": false,
-    "url": "https://equihash.letshash.it/",
+    "url": "http://equihash.letshash.it/",
     "img": "space.png",
     "name": "spacecoin",
     "new": true,
@@ -414,7 +414,7 @@
     "unitPlaces": 0,
     "addressPrefix": 0
   },
-   "SUGAR": {
+  "SUGAR": {
     "api": false,
     "url": "http://letshash.online/",
     "img": "sugar.png",
