@@ -403,6 +403,39 @@
     "unitPlaces": 0,
     "addressPrefix": 0
   },
+   "SPACE": {
+    "api": false,
+    "url": "https://equihash.letshash.it/",
+    "img": "space.png",
+    "name": "spacecoin",
+    "new": true,
+    "active": true,
+    "algo": "equihash",
+    "unitPlaces": 0,
+    "addressPrefix": 0
+  },
+   "SUGAR": {
+    "api": false,
+    "url": "http://letshash.online/",
+    "img": "sugar.png",
+    "name": "SugarChain",
+    "new": true,
+    "active": true,
+    "algo": "YespowerSUGAR",
+    "unitPlaces": 0,
+    "addressPrefix": 0
+  },
+   "SCC": {
+    "api": false,
+    "url": "http://letshash.online/",
+    "img": "scc.png",
+    "name": "StakeCubeCoin",
+    "new": true,
+    "active": true,
+    "algo": "x11",
+    "unitPlaces": 0,
+    "addressPrefix": 0
+  },
   "LNC": {
     "api": false,
     "url": "http://letshash.online/",
