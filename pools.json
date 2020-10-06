@@ -403,6 +403,17 @@
     "unitPlaces": 0,
     "addressPrefix": 0
   },
+  "SPACE": {
+    "api": false,
+    "url": "http://equihash.letshash.it/",
+    "img": "space.png",
+    "name": "spacecoin",
+    "new": true,
+    "active": true,
+    "algo": "equihash",
+    "unitPlaces": 0,
+    "addressPrefix": 0
+  },
   "SUGAR": {
     "api": false,
     "url": "http://letshash.online/",
