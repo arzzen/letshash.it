@@ -247,7 +247,7 @@
     "new": false,
     "active": true,
     "algo": "Argon2d/Ninja",
-    "unitPlaces": 2,
+    "unitPlaces": 5,
     "addressPrefix": 10115542401
   },
 
@@ -389,6 +389,17 @@
     "new": true,
     "active": true,
     "algo": "yescryptR16",
+    "unitPlaces": 0,
+    "addressPrefix": 0
+  },
+    "FIVEG": {
+    "api": false,
+    "url": "http://letshash.online/",
+    "img": "5g.png",
+    "name": "fiveg",
+    "new": true,
+    "active": true,
+    "algo": "x16rv2",
     "unitPlaces": 0,
     "addressPrefix": 0
   },
