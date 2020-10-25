@@ -1,5 +1,12 @@
 {
   "CX": {
+    "type": "cn",
+    "endpoints": {
+      "stats": "https://letshash.it:8218/stats",
+      "blocks": "https://letshash.it:8218/stats",
+      "payments": "https://letshash.it:8218/stats",
+      "wallet": ""
+    },
     "api": "https://letshash.it:8218/stats",
     "url": "http://letshash.it/cx/",
     "img": "catalyst.png",
